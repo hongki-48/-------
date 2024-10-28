@@ -1,0 +1,126 @@
+/* --------------------------------------------------------- Reset ------------------------------------------------------------------ */
+/* Root */
+:root {
+    --max-width: 2000px;
+    --side-width : 220px;
+    --container: 0 1.5rem;
+    --inner: 1.5rem;
+
+    --body-color: #333;
+
+    /* Key Color */
+    --primary-color: #3756D6;               /* 버튼, 활성 상태와 같은 UI 전체의 주요 구성 요소 */
+    --primary-hover: #203edd;
+    --secondary-color: #6F809A;             /* 필터, 칩과 같이 보조적인 역할을 하는 구성 요소 */
+    --point-color: #dd3267;                 /* 집중도 높이는데 사용 */
+
+    --light-color: #707070;
+    --active-color: #fd8b40;
+    --side-color: #313859;
+    --side-active: #0067FF;
+
+    /* System Color */
+    --danger-color: #eb003b;                /* 오류,금지,삭제 */
+    --warning-color: #ffb724;               /* 주의 */
+    --success-color: #008a1e;               /* 성공,진행 */
+    --info-color: #2768ff;                  /* 정보,강조 */
+
+    /* Text Color */
+    --text-lead: #777;
+    --text-red: #EE1216;
+    --text-pink: #dd3267;
+    --text-blue: #3756D6;
+    --text-green: #1d8102;
+
+    --title-color: #222;
+    --lead-color: #000;
+
+    /* Line Color */
+    --border-color: #ddd;
+    --hr-color: #eee;
+    --line-color: #d9dbdb;
+    --table-color: #F2F6FB;
+    --table-line-color: #ddd;
+
+    /* Input */
+    --placeholder: #707070;
+    --input-color: #ddd;
+    --input-radius: 10px;
+
+    /* Radius */
+    --radius: 10px;
+    --radius-md: 15px;
+}
+
+
+
+/* 웹접근성 포커스 */
+:focus-visible {
+    position: relative;
+    z-index: 2;
+    /*outline: 1px dashed #000;*/
+    box-shadow: 0 0 0 2px #fff inset;
+}
+
+
+
+/* Html, Body */
+html {
+    font-size: 100%;
+}
+
+
+
+/* Normal */
+a {
+    text-decoration: none;
+    color: #222;
+    border: none;
+    cursor: pointer;
+}
+a:hover {text-decoration: none;}
+
+hr {
+    border: none;
+    border-bottom: 1px solid #efefef;
+    margin: 15px 0;
+}
+
+
+
+/* Select Style */
+select {
+    -webkit-border-radius: 1px;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: url("/images/adm/icon/basic/select-arrow.png") no-repeat right 10px center #fff; /* 화살표 모양의 이미지 */
+    padding-left: 8px;
+    padding-right: 35px;
+    border-radius: 0px; /* iOS 둥근모서리 제거 */
+}
+
+
+
+/* Font-size */
+.size10 {font-size: 10px !important;}
+.size11 {font-size: 11px !important;}
+.size12 {font-size: 12px !important;}
+.size13 {font-size: 13px !important;}
+.size14 {font-size: 14px !important;}
+.size15 {font-size: 15px !important;}
+.size16 {font-size: 16px !important;}
+.size17 {font-size: 17px !important;}
+.size18 {font-size: 18px !important;}
+.size20 {font-size: 20px !important;}
+.size22 {font-size: 22px !important;}
+.size24 {font-size: 24px !important;}
+.size26 {font-size: 26px !important;}
+.size28 {font-size: 28px !important;}
+.size30 {font-size: 30px !important;}
+.size32 {font-size: 32px !important;}
+.size34 {font-size: 34px !important;}
+.size36 {font-size: 36px !important;}
+.size38 {font-size: 38px !important;}
+.size40 {font-size: 40px !important;}
+/* --------------------------------------------------------- //Reset ------------------------------------------------------------------ */

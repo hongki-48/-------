@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>식단표 선택</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+    <script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+	<div class="win-popup">
+		
+		<div>
+			<section class="card">
+				<div class="search-form">
+					<form>
+						<div class="flex">
+							<div class="form-group1 wp100">
+								<label for="id동일일자선택" class="tit">일자선택</label>
+								<span class="date-wrap w250">
+									<input id="id동일일자선택" type="date" class="datepicker" value="2024-10-04">
+								</span>
+								<label class="lb-ch ml-10">
+									<input type="checkbox" checked>
+									<span class="text">같은 요일에 동일 적용</span>
+								</label>
+							</div>
+							<div class="form-group1">
+								<label for="id동일명칭검색" class="tit">명칭검색</label>
+								<input id="id동일명칭검색" type="text" class="w250" placeholder="예) 저염, 당뇨 등">
+							</div>
+							<button type="submit" class="btn second w90">검색</button>
+						</div>
+					</form>
+				</div>
+
+				<hr>
+
+				<div class="mt-20">
+					<div class="flex bottom gap5 mb-5">
+						<h4 class="result-tit">총 <strong class="text-primary">150</strong>건</h4>
+					</div>
+					<table class="col striped hover">
+						<colgroup>
+							<col style="width: 10%;">
+							<col style="width: 15%;">
+							<col>
+							<col style="width: 25%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th></th>
+								<th>명칭</th>
+								<th>식단표</th>
+								<th>등록일시</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>
+									<label class="lb-ch">
+										<input type="radio" name="테스트이름1">
+										<span class="text"></span>
+									</label>
+								</td>
+								<td>저염식</td>
+								<td>잡곡밥, 김치어묵우동, 명란한 떡갈비, 취나물 들깨볶음, 양배추야채초무침, 깍두기, (877Kcal)</td>
+								<td>2024-10-01 11:23:30</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lb-ch">
+										<input type="radio" name="테스트이름1" checked>
+										<span class="text"></span>
+									</label>
+								</td>
+								<td>저염식</td>
+								<td>잡곡밥, 김치어묵우동, 명란한 떡갈비, 취나물 들깨볶음, 양배추야채초무침, 깍두기, (877Kcal)</td>
+								<td>2024-10-01 11:23:30</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lb-ch">
+										<input type="radio" name="테스트이름1">
+										<span class="text"></span>
+									</label>
+								</td>
+								<td>저염식</td>
+								<td>잡곡밥, 김치어묵우동, 명란한 떡갈비, 취나물 들깨볶음, 양배추야채초무침, 깍두기, (877Kcal)</td>
+								<td>2024-10-01 11:23:30</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lb-ch">
+										<input type="radio" name="테스트이름1">
+										<span class="text"></span>
+									</label>
+								</td>
+								<td>저염식</td>
+								<td>잡곡밥, 김치어묵우동, 명란한 떡갈비, 취나물 들깨볶음, 양배추야채초무침, 깍두기, (877Kcal)</td>
+								<td>2024-10-01 11:23:30</td>
+							</tr>
+							<tr>
+								<td>
+									<label class="lb-ch">
+										<input type="radio" name="테스트이름1">
+										<span class="text"></span>
+									</label>
+								</td>
+								<td>저염식</td>
+								<td>잡곡밥, 김치어묵우동, 명란한 떡갈비, 취나물 들깨볶음, 양배추야채초무침, 깍두기, (877Kcal)</td>
+								<td>2024-10-01 11:23:30</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<div class="btn-right mt-50">
+					<button type="button" class="btn line" onclick="window.close()"><i class="ico close"></i> 닫기</button>
+					<button type="button" class="btn"><i class="ico save"></i> 등록하기</button>
+				</div>
+			</section>
+		</div>
+
+		<script>
+			// Datepicker 임시용
+			$( ".datepicker" ).datepicker({
+				showOn: "both",
+				buttonImage: "/images/comm/jquery/calendar.png",
+				buttonImageOnly: true
+			});
+		</script>
+
+	</div>
+</body>
+</html>

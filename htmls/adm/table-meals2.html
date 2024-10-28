@@ -1,0 +1,331 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>통합돌봄 식사영양관리 운영시스템</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- skip navigation -->
+	<div id="skipNav" class="skip-nav">
+		<a href="#skipContent">본문 바로가기</a>
+		<a href="#gnb">주 메뉴 바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<aside id="aside">
+		<h1 class="logo">
+			<a href="/">통합돌봄<br>식사영양관리<br>운영시스템</a>
+		</h1>
+
+		<div class="login-info">
+			<div class="profile">
+				<span class="img-fit"><img src="/images/adm/sample/user.png" alt=""></span>
+				<span class="name">노인복지과</span>
+				<button class="btn xs second ml-auto"><i class="ico logout"></i> 로그아웃</button>
+			</div>
+		</div>
+
+		<div class="gnb-wrap">
+			<nav id="gnb" class="gnb">
+				<ul>
+					<li>
+						<a href=""><i class="ico1"></i> <strong>기관정보 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico2"></i> <strong>대상자 관리</strong></a>
+					</li>
+					<li class="active">
+						<a href=""><i class="ico3"></i> <strong>식단표 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico4"></i> <strong>진행현황 조회</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico5"></i> <strong>사업결과보고조회</strong></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+	
+	<main id="main">
+		<section id="skipContent" class="contents-wrap">
+			<h2 class="page-tit">식단표 관리</h2>
+			
+			<!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+
+			<div>
+				<section class="card">
+					<div class="search-form">
+						<form>
+							<div class="flex">
+								<div class="form-group1">
+									<label for="id동일지역구분" class="tit">지역구분</label>
+									<select id="id동일지역구분" class="w150" title="지역구분 선택">
+										<option value="">지역선택</option>
+									</select>
+								</div>
+								<div class="form-group1">
+									<label for="id동일년도" class="tit">년도</label>
+									<select id="id동일년도" class="w150" title="년도 선택">
+										<option value="">년도 선택</option>
+									</select>
+								</div>
+								<div class="form-group1">
+									<label for="id동일월" class="tit">월</label>
+									<select id="id동일월" class="w150" title="월 선택">
+										<option value="">월 선택</option>
+									</select>
+								</div>
+								<button type="submit" class="btn second w90">검색</button>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit2 text-primary">부산금정구 : 복지관 명 <small>[0000000]</small></h3>
+					<div class="calendar-wrapper">
+						<div class="control">
+							<button class="prev"><span class="hidden">이전달</span></button>
+							<span class="text"><strong class="year">2024</strong>년 <strong class="month">10</strong>월</span>
+							<button class="next"><span class="hidden">이전달</span></button>
+						</div>
+						<div class="calendar">
+							<table>
+								<caption class="hidden">일정안내</caption>
+								<thead>
+									<tr>
+										<th scope="col" class="sun">일</th>
+										<th scope="col">월</th>
+										<th scope="col">화</th>
+										<th scope="col">수</th>
+										<th scope="col">목</th>
+										<th scope="col">금</th>
+										<th scope="col" class="sat">토</th>
+									</tr>
+								</thead>
+								<tbody>
+									<tr>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td>
+											<p class="day"><strong class="sat">1</strong></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="day"><strong class="sun">2</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>3</strong></p>
+											<div class="text">
+												<div class="flex right floating">
+													<button class="btn xs line" onclick="window.open('table-meals-select.html', '식단표 선택', 'width=1000, height=750')">
+														<i class="ico edit"></i> <span class="hidden">수정</span>
+													</button>
+													<button class="btn xs red line"><i class="ico trash"></i> <span class="hidden">삭제</span></button>
+												</div>
+												<p class="meal-txt">
+													잡곡밥<br>
+													김치어묵우동<br>
+													명란한 떡갈비<br>
+													취나물 들깨볶음<br>
+													양배추야채초무침<br>
+													깍두기
+												</p>
+												<p class="meal-unit">(877Kcal)</p>
+											</div>
+										</td>
+										<td>
+											<p class="day"><strong>4</strong></p>
+											<div class="text">
+												<div class="flex right floating">
+													<button class="btn xs line" onclick="window.open('table-meals-select.html', '식단표 선택', 'width=1000, height=750')">
+														<i class="ico edit"></i> <span class="hidden">수정</span>
+													</button>
+													<button class="btn xs red line"><i class="ico trash"></i> <span class="hidden">삭제</span></button>
+												</div>
+												<p class="meal-txt">
+													잡곡밥<br>
+													김치어묵우동<br>
+													명란한 떡갈비<br>
+													취나물 들깨볶음<br>
+													양배추야채초무침<br>
+													깍두기
+												</p>
+												<p class="meal-unit">(877Kcal)</p>
+											</div>
+										</td>
+										<td>
+											<p class="day"><strong>5</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>6</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>7</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong class="sat">8</strong></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="day"><strong class="sun">9</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>10</strong></p>
+											<div class="text">
+												<div class="flex right floating">
+													<button class="btn xs line" onclick="window.open('table-meals-select.html', '식단표 선택', 'width=1000, height=750')">
+														<i class="ico edit"></i> <span class="hidden">수정</span>
+													</button>
+													<button class="btn xs red line"><i class="ico trash"></i> <span class="hidden">삭제</span></button>
+												</div>
+												<p class="meal-txt">
+													잡곡밥<br>
+													김치어묵우동<br>
+													명란한 떡갈비<br>
+													취나물 들깨볶음<br>
+													양배추야채초무침<br>
+													깍두기
+												</p>
+												<p class="meal-unit">(877Kcal)</p>
+											</div>
+										</td>
+										<td>
+											<p class="day"><strong>11</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>12</strong></p>
+										</td>
+										<td class="today">
+											<p class="day"><strong>13</strong></p>
+											<div class="text">
+												<div class="flex right floating">
+													<button class="btn xs line" onclick="window.open('table-meals-select.html', '식단표 선택', 'width=1000, height=750')">
+														<i class="ico edit"></i> <span class="hidden">수정</span>
+													</button>
+													<button class="btn xs red line"><i class="ico trash"></i> <span class="hidden">삭제</span></button>
+												</div>
+												<p class="meal-txt">
+													잡곡밥<br>
+													김치어묵우동<br>
+													명란한 떡갈비<br>
+													취나물 들깨볶음<br>
+													양배추야채초무침<br>
+													깍두기
+												</p>
+												<p class="meal-unit">(877Kcal)</p>
+											</div>
+										</td>
+										<td>
+											<p class="day"><strong>14</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong class="sat">15</strong></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="day"><strong class="sun">16</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>17</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>18</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>19</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>20</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>21</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong class="sat">22</strong></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="day"><strong class="sun">23</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>24</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>25</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>26</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>27</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>28</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong class="sat">29</strong></p>
+										</td>
+									</tr>
+									<tr>
+										<td>
+											<p class="day"><strong class="sun">30</strong></p>
+										</td>
+										<td>
+											<p class="day"><strong>31</strong></p>
+										</td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+										<td></td>
+									</tr>
+								</tbody>
+							</table>
+						</div>
+					</div>
+					<div class="btn-right">
+						<button class="btn" onclick="window.open('table-meals-select.html', '식단표 선택', 'width=1000, height=750')">
+							<i class="ico add"></i> 식단표 불러오기
+						</button>
+					</div>
+				</section>
+			</div>
+
+			<!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+
+		</section> <!-- //contents-wrap -->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrapper-->
+</body>
+</html>

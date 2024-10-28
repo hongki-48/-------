@@ -1,0 +1,621 @@
+/* Title */
+.tit-justify,
+.title-justify,
+.title.justify {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.page-tit,
+.depth-title {
+    font-weight: 700;
+    font-size: 24px;
+    color: var(--title-color);
+    margin-bottom: 15px;
+}
+
+.result-tit,
+.title2 {
+    font-size: 15px;
+    margin-bottom: 10px;
+}
+.title2 small {
+    font-size: 14px;
+}
+
+.group-tit {
+    font-weight: 700;
+    font-size: 20px;
+    color: var(--title-color);
+    margin-bottom: 10px;
+}
+.group-tit ~ .group-tit {
+    margin-top: 50px;
+}
+
+.group-tit2 {
+    font-weight: 500;
+    font-size: 18px;
+    color: var(--title-color);
+    margin: 20px 0 10px;
+}
+
+.group-tit3 {
+    font-weight: 500;
+    font-size: 16px;
+    color: var(--title-color);
+    margin: 20px 0 10px;
+}
+
+.sm-txt {
+    font-size: 13px;
+}
+
+
+
+/* Lead */
+.lead-md {
+    font-size: 18px;
+}
+
+
+
+/* Card, Box */
+.card,
+.search-form {
+    background: #fff;
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 35px 40px;
+}
+.card:not(:last-child),
+.search-form:not(:last-child) {
+    margin-bottom: 25px;
+}
+
+
+
+/* Icons */
+.ico-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+}
+.ico-btn .ico {
+    filter: invert(48%) sepia(6%) saturate(1549%) hue-rotate(177deg) brightness(101%) contrast(90%);
+}
+
+.ico {
+    display: inline-flex;
+    width: 16px;
+    height: 16px;
+    background: url("/images/adm/icon/search.svg") no-repeat center;
+    background-size: 16px;
+    text-indent: -9999px;
+}
+.ico.middle {
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.ico.plus {background-image: url("/images/adm/icon/plus.svg");}
+.ico.add {background-image: url("/images/adm/icon/plus.svg");}
+.ico.edit {background-image: url("/images/adm/icon/edit.svg");}
+.ico.cancel,
+.ico.close {
+    background-image: url("/images/adm/icon/cancel.svg");
+}
+.ico.trash {background-image: url("/images/adm/icon/trash.svg");}
+.ico.save {background-image: url("/images/adm/icon/save.svg");}
+.ico.copy {background-image: url("/images/adm/icon/copy.svg");}
+.ico.view {background-image: url("/images/adm/icon/view.svg");}
+.ico.list {background-image: url("/images/adm/icon/list.svg");}
+.ico.send {background-image: url("/images/adm/icon/send.svg");}
+.ico.user {background-image: url("/images/adm/icon/user.svg");}
+.ico.layer {background-image: url("/images/adm/icon/layer.svg");}
+.ico.map {background-image: url("/images/adm/icon/map.svg");}
+.ico.time {background-image: url("/images/adm/icon/time.svg");}
+.ico.print {background-image: url("/images/adm/icon/print.svg");}
+.ico.choice {background-image: url("/images/adm/icon/choice.svg");}
+.ico.down {background-image: url("/images/adm/icon/down.svg");}
+.ico.reset {background-image: url("/images/adm/icon/reset.svg");}
+.ico.drop {background-image: url("/images/adm/icon/drop.svg");}
+.ico.logout {background-image: url("/images/adm/icon/logout.svg");}
+.ico.info {background-image: url("/images/adm/icon/info.svg");}
+.ico.table {background-image: url("/images/adm/icon/table.svg");}
+.ico.graph {background-image: url("/images/adm/icon/graph.svg");}
+
+.btn .ico {
+    margin-right: 2px;
+    filter: invert(99%) sepia(1%) saturate(3083%) hue-rotate(309deg) brightness(124%) contrast(99%);
+    transition: filter .7s ease;
+}
+
+.btn.xs .ico,
+.btn.sm .ico {
+    width: 13px;
+    height: 13px;
+    background-size: 13px;
+}
+.btn.lg .ico,
+.btn.xl .ico {
+    width: 20px;
+    height: 20px;
+    background-size: 20px;
+    margin-right: 5px;
+}
+
+.btn.white .ico,
+.btn.line .ico,
+.ico.invert {
+    filter: invert(49%) sepia(40%) saturate(238%) hue-rotate(176deg) brightness(92%) contrast(89%);
+}
+.btn.red.line .ico {
+    filter: invert(14%) sepia(100%) saturate(7013%) hue-rotate(355deg) brightness(102%) contrast(90%);
+}
+
+.btn.line:hover:not(:disabled) .ico,
+.btn.white:hover:not(:disabled) .ico,
+.btn.red.line:hover:not(:disabled) .ico,
+.btn.white.active .ico {
+    filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(264deg) brightness(104%) contrast(101%);
+}
+
+
+.btn.active .ico.drop {
+    transform: rotate(180deg);
+}
+
+
+.ico.bg {
+    width: 24px;
+    height: 24px;
+    background-color: #A2ABCF;
+    border-radius: 50%;
+}
+
+
+
+/* Other Icons */
+.top-info-ico {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+
+
+/* Badge */
+.badge {
+    display: inline-block;
+    vertical-align: middle;
+    font-weight: 600;
+    font-size: 14px;
+    color: #fff;
+    background: var(--primary-color);
+    border-radius: 3px;
+    padding: 2px 4px;
+    margin: 0 2px;
+}
+
+
+
+/* Chips */
+.chip-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+}
+.chip input[type="checkbox"],
+.chip input[type="radio"] {
+    width: 0;
+    height: 0;
+    line-height: 0;
+    visibility: hidden;
+    position: absolute;
+}
+.chip input[type="checkbox"] + span,
+.chip input[type="radio"] + span {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 35px;
+    font-size: 15px;
+    background: #fff;
+    border: 1px solid var(--line-color);
+    border-radius: 20px;
+    padding: 0 16px;
+    transition: all .7s ease;
+}
+.chip input[type="checkbox"]:checked + span,
+.chip input[type="radio"]:checked + span {
+    color: #fff;
+    background: var(--primary-color);
+    border-color: var(--primary-color);
+}
+
+
+
+/* Tool Tip */
+.tool-tip {
+    padding: 2px 4px;
+    position: relative;
+}
+
+.tool-tip,
+.tool-tip::before {
+    display: inline-block;
+}
+
+.tool-tip::before {
+    cursor: pointer;
+    font-family: 'Material Icons Outlined';
+    font-feature-settings: 'liga';
+    content: "help";
+    font-weight: 400;
+    font-size: 23px;
+    color: #555;
+    vertical-align: middle;
+    position: relative;
+    top: -1px;
+}
+
+.tool-tip .text {
+    position: absolute;
+    z-index: -1;
+    top: 32px;
+    left: 0;
+    display: block;
+    min-width: 300px;
+    text-align: left;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    color: #333;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    padding: 15px 15px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all .6s ease;
+}
+.tool-tip .text::after {
+    content: "";
+    position: absolute;
+    top: -20px;
+    left: 8px;
+    width: 0px;
+    height: 0px;
+    border-top: 10px solid transparent;
+    border-left: 8px solid transparent;
+    border-right: 8px solid transparent;
+    border-bottom: 10px solid #fff;
+}
+
+.tool-tip:hover .text {
+    z-index: 89;
+    transform: translateY(0);
+    opacity: 1;
+}
+
+
+
+/* Info Card */
+.info-card {
+    background: #F6F6F6;
+    border-radius: var(--radius);
+    padding: 20px;
+    margin-bottom: 30px;
+}
+.info-card > div:not(:last-child) {
+    margin-bottom: 15px;
+}
+.info-card dl,
+.info-card dt,
+.info-card dd {
+    display: flex;
+    align-items: center;
+}
+.info-card dt {
+    color: #6F809A;
+}
+.info-card dt::after {
+    content: " : ";
+    margin: 0 4px;
+}
+.info-card dt .ico {
+    margin-right: 5px;
+}
+.info-card dd {
+    color: var(--light-color);
+}
+
+
+
+/* 내비게이션 탭메뉴 */
+.nav-tabs {
+    display: flex;
+    gap: 10px;
+    margin: 40px 0 20px;
+}
+.nav-tabs a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 50px;
+    font-size: 15px;
+    background: #fff;
+    border: 1px solid var(--input-color);
+    border-radius: var(--radius);
+    padding: 0 15px;
+    transition: all .8s ease;
+}
+.nav-tabs a:hover,
+.nav-tabs a.active {
+    color: #fff;
+    background: var(--primary-color);
+}
+
+.nav-tabs2 {
+    display: flex;
+    gap: 0 20px;
+    border-bottom: 1px solid var(--line-color);
+    margin: 0 0 35px;
+}
+.nav-tabs2 a {
+    font-weight: 500;
+    font-size: 16px;
+    padding: 8px 5px;
+    position: relative;
+    transition: all .8s ease;
+}
+.nav-tabs2 a::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: -1px;
+    left: 50%;
+    right: 0;
+    width: 0;
+    height: 4px;
+    background: var(--primary-color);
+    transition: all .8s ease;
+}
+.nav-tabs2 a.active {
+    font-weight: 600;
+}
+.nav-tabs2 a.active,
+.nav-tabs2 a:hover {
+    color: var(--primary-color);
+}
+.nav-tabs2 a.active::after,
+.nav-tabs2 a:hover::after {
+    width: 100%;
+    left: 0;
+}
+
+
+
+/* Chart */
+.chart {
+    border: 1px solid var(--border-color);
+    border-radius: var(--radius-md);
+    padding: 30px 20px;
+}
+
+
+
+/* Dl Info */
+.dl-info {
+    display: inline-flex;
+}
+.dl-info:not(:last-child) {
+    margin-right: 20px;
+}
+.dl-info dt,
+.dl-info dd {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100px;
+    height: 45px;
+    background: #F6F6F6;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    padding: 0 15px;
+}
+.dl-info dt {
+    font-weight: 500;
+    background: var(--table-color);
+    border-color: var(--table-color);
+    margin-right: 5px;
+}
+
+
+
+/* Detail Option */
+.detail-option {
+    display: none;
+    border-top: 1px solid var(--hr-color);
+    padding-top: 25px;
+    margin-top: 25px;
+}
+
+
+
+/* State Text */
+.state-txt {
+    display: inline-flex;
+    align-items: center;
+    font-size: 14px;
+    line-height: 15px;
+    margin: 0 2px;
+}
+.state-txt::before {
+    content: "▲";
+    font-size: 11px;
+    margin-right: 2px;
+}
+.state-txt[data-state="write"] {
+    color: var(--warning-color);
+}
+.state-txt[data-state="completion"] {
+    color: var(--success-color);
+}
+.state-txt[data-state="completion"]::before {
+    content: "●";
+}
+
+
+
+/* Calendar */
+.calendar-wrapper .control {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.calendar-wrapper .control .text {
+    font-size: 24px;
+}
+.calendar-wrapper .control .prev,
+.calendar-wrapper .control .next {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 35px;
+    height: 35px;
+    background: #fff;
+    border: 1px solid #ddd;
+    border-radius: var(--radius);
+    transition: all .7s ease;
+}
+.calendar-wrapper .control .prev::before,
+.calendar-wrapper .control .next::after {
+    font-family: 'Material Icons Outlined';
+    font-feature-settings: 'liga';
+    content: "chevron_right";
+    font-size: 24px;
+    color: var(--light-color);
+    transition: all .7s ease;
+}
+.calendar-wrapper .control .prev::before {
+    content: "chevron_left";
+}
+.calendar-wrapper .control .prev:hover,
+.calendar-wrapper .control .next:hover {
+    border-color: var(--primary-color);
+}
+.calendar-wrapper .control .prev:hover::before,
+.calendar-wrapper .control .next:hover::after {
+    color: var(--primary-color);
+}
+/* .calendar-wrapper .control .month {
+    color: var(--primary-color);
+} */
+
+.calendar table {
+    width: 100%;
+    border-collapse: collapse;
+    border-spacing: 0;
+    table-layout: fixed;
+}
+.calendar table thead {
+    background: var(--table-color);
+}
+.calendar table th,
+.calendar table td {
+    border: 1px solid #e1dfdf;
+}
+.calendar table th {
+    height: 45px;
+    font-size: 16px;
+    border-bottom: none;
+}
+.calendar table td {
+    vertical-align: top;
+    height: 150px;
+    padding: 8px;
+    font-size: 15px;
+    line-height: 18px;
+    position: relative;
+}
+.calendar table td .link {
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 8px;
+}
+.calendar table td .day {
+    position: relative;
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    line-height: 16px;
+    text-align: center;
+}
+.calendar table td .day strong {position: relative; z-index: 3;}
+
+.calendar table td.today .day strong {color: #fff;}
+.calendar table td.today .day::before {
+    content: "";
+    display: block;
+    position: absolute;
+    z-index: 2;
+    top: -3px;
+    left: -3px;
+    width: 22px;
+    height: 22px;
+    background: var(--primary-color);
+    border-radius: 50%;
+}
+.calendar table td.active::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0; right: 0; bottom: 0; left: 0;
+    border: 2px solid #fe4343;
+}
+
+.calendar table .sun {color: #fe4343;}
+.calendar table .sat {color: #2982fa;}
+
+.calendar .text {
+    margin: 12px 0 5px;
+}
+.calendar .text a {
+    color: #333;
+}
+.calendar .floating {
+    position: absolute;
+    z-index: 3;
+    right: 0;
+    top: 0;
+    padding: 5px;
+}
+
+.meal-txt {
+    text-align: center;
+    font-size: 15px;
+    line-height: 22px;
+}
+.meal-unit {
+    text-align: center;
+    font-size: 13px;
+    margin-top: 5px;
+}

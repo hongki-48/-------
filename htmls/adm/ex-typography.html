@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>통합돌봄 식사영양관리 운영시스템</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- skip navigation -->
+	<div id="skipNav" class="skip-nav">
+		<a href="#skipContent">본문 바로가기</a>
+		<a href="#gnb">주 메뉴 바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<aside id="aside">
+		<h1 class="logo">
+			<a href="/">통합돌봄<br>식사영양관리<br>운영시스템</a>
+		</h1>
+
+		<div class="login-info">
+			<div class="profile">
+				<span class="img-fit"><img src="/images/adm/sample/user.png" alt=""></span>
+				<span class="name">노인복지과</span>
+				<button class="btn xs second ml-auto"><i class="ico logout"></i> 로그아웃</button>
+			</div>
+		</div>
+
+		<div class="gnb-wrap">
+			<nav id="gnb" class="gnb">
+				<ul>
+					<li>
+						<a href=""><i class="ico1"></i> <strong>기관정보 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico2"></i> <strong>대상자 관리</strong></a>
+					</li>
+					<li class="active">
+						<a href=""><i class="ico3"></i> <strong>식단표 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico4"></i> <strong>진행현황 조회</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico5"></i> <strong>사업결과보고조회</strong></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+	
+	<main id="main">
+		<section id="skipContent" class="contents-wrap">
+			<h2 class="page-tit">Page Title</h2>
+			
+			<!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+
+			<div>
+				<section class="card">
+					<h3 class="group-tit">System colors</h3>
+					<hr>
+					<div class="grid gap6">
+						<p><strong class="text-red">Danger</strong> : 오류, 금지, 위험, 삭제, 불가 등을 표시할 때 사용한다.</p>
+						<p><strong class="text-yellow">Warning</strong> : 실수나 오류가 발생하지 않도록 주의 사항을 전달할 때 사용한다.</p>
+						<p><strong class="text-green">Success</strong> : 성공, 완료, 진행 등의 결과를 전달할 때 사용한다.</p>
+						<p><strong class="text-blue">Information</strong> : 정보를 제공하거나 특별히 강조가 필요할 때 사용한다.</p>
+
+						<p class="mt-10">
+							Text
+							<span class="text-blue">Text</span>
+							<span class="text-green">Text</span>
+							<span class="text-yellow">Text</span>
+							<span class="text-red">Text</span>
+						</p>
+					</div>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">Group Title
+						<div class="tool-tip">
+							<div class="text">툴팁 내용 들어가는 부분...</div>
+						</div>
+					</h3>
+					<hr>
+
+					<div class="tit-justify">
+						<h3 class="group-tit">Group Title</h3>
+						<!-- <div>
+							<button type="button" class="btn md line"><i class="ico down"></i> Excel 다운로드</button>
+							<button type="button" class="btn md line"><i class="ico plus"></i> 등록</button>
+						</div> -->
+						<div>
+							<button class="btn white"><i class="ico table"></i> 집계표로 보기</button>
+							<button class="btn white active"><i class="ico graph"></i> 그래프로 보기</button>
+						</div>
+					</div>
+					<hr>
+
+					<div class="flex justify">
+						<h3 class="group-tit">Group Title
+							<span class="badge">Badge</span>
+							<span class="badge">New</span>
+						</h3>
+						<p class="top-caption">
+							<i class="required"></i>
+							<strong class="txt">표시 필수 입력사항</strong>
+						</p>
+					</div>
+					<hr>
+
+					<div class="flex gap10 bottom">
+						<h3 class="group-tit2 text-primary">Group Title2</h3>
+						<h4 class="result-tit">총 <strong class="text-primary">150</strong>건</h4>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="info-card">
+						<div class="flex justify">
+							<div class="flex gap30">
+								<dl>
+									<dt><i class="ico bg user"></i> Title</dt>
+									<dd>Text</dd>
+								</dl>
+								<dl>
+									<dt><i class="ico bg layer"></i> Title</dt>
+									<dd>Text</dd>
+								</dl>
+								<dl>
+									<dt><i class="ico bg map"></i> Title</dt>
+									<dd>Text Text Text Text Text</dd>
+								</dl>
+							</div>
+							<div class="flex gap10">
+								<dl class="fade">
+									<dt><i class="ico invert time"></i> 접수일자</dt>
+									<dd> 2024.07.18(화)</dd>
+								</dl>
+								<dl>
+									<dt><i class="ico invert time"></i> 접수일자</dt>
+									<dd> 2024.07.18(화)</dd>
+								</dl>
+							</div>
+						</div>
+					</div>
+
+					<h3 class="group-tit">Group Title1</h3>
+					<h4 class="group-tit2">Group Title2</h4>
+					<h5 class="group-tit3">Group Title3</h5>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">Caption</h3>
+					<p class="form-caption">TextTextText TextTextTextTextText.</p>
+					<hr>
+					<p class="caption">TextTextText TextTextTextTextText TextTextText TextTextTextTextText</p>
+				</section>
+			</div>
+
+			<!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+
+		</section> <!-- //contents-wrap -->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrapper-->
+</body>
+</html>

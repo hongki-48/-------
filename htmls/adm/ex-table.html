@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>통합돌봄 식사영양관리 운영시스템</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- skip navigation -->
+	<div id="skipNav" class="skip-nav">
+		<a href="#skipContent">본문 바로가기</a>
+		<a href="#gnb">주 메뉴 바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<aside id="aside">
+		<h1 class="logo">
+			<a href="/">통합돌봄<br>식사영양관리<br>운영시스템</a>
+		</h1>
+
+		<div class="login-info">
+			<div class="profile">
+				<span class="img-fit"><img src="/images/adm/sample/user.png" alt=""></span>
+				<span class="name">노인복지과</span>
+				<button class="btn xs second ml-auto"><i class="ico logout"></i> 로그아웃</button>
+			</div>
+		</div>
+
+		<div class="gnb-wrap">
+			<nav id="gnb" class="gnb">
+				<ul>
+					<li>
+						<a href=""><i class="ico1"></i> <strong>기관정보 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico2"></i> <strong>대상자 관리</strong></a>
+					</li>
+					<li class="active">
+						<a href=""><i class="ico3"></i> <strong>식단표 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico4"></i> <strong>진행현황 조회</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico5"></i> <strong>사업결과보고조회</strong></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+	
+	<main id="main">
+		<section id="skipContent" class="contents-wrap">
+			<h2 class="page-tit">Page Title</h2>
+			
+			<!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+
+			<div>
+				<section class="card">
+					<div class="flex bottom gap5 mb-5">
+						<h4 class="result-tit">총 <strong class="text-primary">150</strong>건</h4>
+					</div>
+					<table class="col">
+						<colgroup>
+							<col style="width: 7%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col>
+							<col style="width: 12%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col style="width: 20%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>접수일자</th>
+								<th>농가명</th>
+								<th>토지주소</th>
+								<th>연락처</th>
+								<th>과실수</th>
+								<th>진행상태</th>
+								<th>비고</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>10</td>
+								<td>2024.06.30</td>
+								<td>빛나리농장</td>
+								<td>제주 서귀포시 상예동 4701</td>
+								<td>010-2604-6270</td>
+								<td>15개</td>
+								<td><span class="text-blue">검사 대기중</span></td>
+								<td>
+									<div class="flex center gap5">
+										<button class="btn sm white"><i class="ico add"></i> 등록</button>
+										<button class="btn sm white"><i class="ico edit"></i> 수정</button>
+										<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>2024.06.30</td>
+								<td>빛나리농장</td>
+								<td>제주 서귀포시 상예동 4701</td>
+								<td>010-2604-6270</td>
+								<td>15개</td>
+								<td><span>검사 완료</span></td>
+								<td>
+									<div class="flex center gap5">
+										<button class="btn sm white"><i class="ico add"></i> 등록</button>
+										<button class="btn sm white"><i class="ico edit"></i> 수정</button>
+										<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>2024.06.30</td>
+								<td>빛나리농장</td>
+								<td>제주 서귀포시 상예동 4701</td>
+								<td>010-2604-6270</td>
+								<td>15개</td>
+								<td><span class="text-red">접수 취소</span></td>
+								<td>
+									<div class="flex center gap5">
+										<button class="btn sm white"><i class="ico add"></i> 등록</button>
+										<button class="btn sm white" disabled><i class="ico edit"></i> 수정</button>
+										<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+					<div class="btn-right">
+						<button type="button" class="btn"><i class="ico plus"></i> 등록하기</button>
+					</div>
+					<div class="paging-wrap">
+						<ul>
+							<li class="prev off"><a href="#"></a></li>
+							<li class="active">1</li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">4</a></li>
+							<li><a href="#">5</a></li>
+							<li class="next"><a href="#"></a></li>
+						</ul>
+						<div class="select-page">
+							<select title="페이지 선택">
+								<option value="">10</option>
+								<option value="">9</option>
+							</select>
+							<span class="ml-5">/ Page</span>
+						</div>
+					</div>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">스트라이프 행</h3>
+					<table class="col striped">
+						<colgroup>
+							<col style="width: 7%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col>
+							<col style="width: 12%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col style="width: 20%;">
+						</colgroup>
+						<thead>
+						<tr>
+							<th>No</th>
+							<th>접수일자</th>
+							<th>농가명</th>
+							<th>토지주소</th>
+							<th>연락처</th>
+							<th>과실수</th>
+							<th>진행상태</th>
+							<th>비고</th>
+						</tr>
+						</thead>
+						<tbody>
+						<tr>
+							<td>10</td>
+							<td>2024.06.30</td>
+							<td>빛나리농장</td>
+							<td>제주 서귀포시 상예동 4701</td>
+							<td>010-2604-6270</td>
+							<td>15개</td>
+							<td><span class="text-blue">검사 대기중</span></td>
+							<td>
+								<div class="flex center gap5">
+									<button class="btn sm white"><i class="ico add"></i> 등록</button>
+									<button class="btn sm white"><i class="ico edit"></i> 수정</button>
+									<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>9</td>
+							<td>2024.06.30</td>
+							<td>빛나리농장</td>
+							<td>제주 서귀포시 상예동 4701</td>
+							<td>010-2604-6270</td>
+							<td>15개</td>
+							<td><span>검사 완료</span></td>
+							<td>
+								<div class="flex center gap5">
+									<button class="btn sm white"><i class="ico add"></i> 등록</button>
+									<button class="btn sm white"><i class="ico edit"></i> 수정</button>
+									<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>8</td>
+							<td>2024.06.30</td>
+							<td>빛나리농장</td>
+							<td>제주 서귀포시 상예동 4701</td>
+							<td>010-2604-6270</td>
+							<td>15개</td>
+							<td><span class="text-red">접수 취소</span></td>
+							<td>
+								<div class="flex center gap5">
+									<button class="btn sm white"><i class="ico add"></i> 등록</button>
+									<button class="btn sm white" disabled><i class="ico edit"></i> 수정</button>
+									<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<td>7</td>
+							<td>2024.06.30</td>
+							<td>빛나리농장</td>
+							<td>제주 서귀포시 상예동 4701</td>
+							<td>010-2604-6270</td>
+							<td>15개</td>
+							<td><span class="text-red">접수 취소</span></td>
+							<td>
+								<div class="flex center gap5">
+									<button class="btn sm white" disabled><i class="ico add"></i> 등록</button>
+									<button class="btn sm white" disabled><i class="ico edit"></i> 수정</button>
+									<button class="btn sm white" disabled><i class="ico trash"></i> 삭제</button>
+								</div>
+							</td>
+						</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">hover</h3>
+					<table class="col hover">
+						<colgroup>
+							<col style="width: 7%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col>
+							<col style="width: 12%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col style="width: 20%;">
+						</colgroup>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>접수일자</th>
+								<th>농가명</th>
+								<th>토지주소</th>
+								<th>연락처</th>
+								<th>과실수</th>
+								<th>진행상태</th>
+								<th>비고</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>10</td>
+								<td>2024.06.30</td>
+								<td>빛나리농장</td>
+								<td>제주 서귀포시 상예동 4701</td>
+								<td>010-2604-6270</td>
+								<td>15개</td>
+								<td><span class="text-blue">검사 대기중</span></td>
+								<td>
+									<div class="flex center gap5">
+										<button class="btn sm white"><i class="ico add"></i> 등록</button>
+										<button class="btn sm white"><i class="ico edit"></i> 수정</button>
+										<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>9</td>
+								<td>2024.06.30</td>
+								<td>빛나리농장</td>
+								<td>제주 서귀포시 상예동 4701</td>
+								<td>010-2604-6270</td>
+								<td>15개</td>
+								<td><span>검사 완료</span></td>
+								<td>
+									<div class="flex center gap5">
+										<button class="btn sm white"><i class="ico add"></i> 등록</button>
+										<button class="btn sm white"><i class="ico edit"></i> 수정</button>
+										<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<td>8</td>
+								<td>2024.06.30</td>
+								<td>빛나리농장</td>
+								<td>제주 서귀포시 상예동 4701</td>
+								<td>010-2604-6270</td>
+								<td>15개</td>
+								<td><span class="text-red">접수 취소</span></td>
+								<td>
+									<div class="flex center gap5">
+										<button class="btn sm white"><i class="ico add"></i> 등록</button>
+										<button class="btn sm white" disabled><i class="ico edit"></i> 수정</button>
+										<button class="btn sm white"><i class="ico trash"></i> 삭제</button>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="card">
+					<div class="flex gap10 bottom">
+						<h3 class="group-tit2 text-primary">Group Title2</h3>
+						<h4 class="result-tit">총 <strong class="text-primary">150</strong>건</h4>
+					</div>
+					<table class="col not-hover">
+						<colgroup>
+							<col style="width: 7%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col>
+							<col style="width: 12%;">
+							<col style="width: 10%;">
+							<col style="width: 12%;">
+							<col style="width: 20%;">
+						</colgroup>
+						<thead>
+						<tr>
+							<th>No</th>
+							<th>접수일자</th>
+							<th>농가명</th>
+							<th>토지주소</th>
+							<th>연락처</th>
+							<th>과실수</th>
+							<th>진행상태</th>
+							<th>비고</th>
+						</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td colspan="8">
+									<div class="not-content">
+										<div class="icon"></div>
+										<p class="text">검색 결과가 없습니다.</p>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="card">
+					<table class="col">
+						<thead>
+							<tr>
+								<th>Title</th>
+								<th>Title</th>
+								<th>Title</th>
+							</tr>
+							<tr>
+								<th>Title</th>
+								<th>Title</th>
+								<th>Title</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th>Th</th>
+								<td class="left">Left</td>
+								<td class="left">Left</td>
+							</tr>
+							<tr>
+								<th>Th</th>
+								<td>Center</td>
+								<td>Center</td>
+							</tr>
+							<tr>
+								<th>Th</th>
+								<td class="right">Right</td>
+								<td class="right">Right</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+
+			<!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+
+		</section> <!-- //contents-wrap -->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrapper-->
+</body>
+</html>

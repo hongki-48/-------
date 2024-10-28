@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>과실품질조사결과 의뢰서</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+    <script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+	<div class="win-popup">
+		<div class="flex justify">
+			<h3 class="group-tit">Group Title
+				<span class="state-txt" data-state="write">작성중</span>
+				<span class="state-txt" data-state="completion">완료</span>
+			</h3>
+			<p class="top-caption">
+				<i class="required"></i>
+				<strong class="txt">표시 필수 입력사항</strong>
+			</p>
+		</div>
+		<table class="row">
+			<colgroup>
+				<col style="width: 20%">
+				<col style="width: 30%">
+				<col style="width: 20%">
+				<col>
+			</colgroup>
+			<tbody>
+				<tr>
+					<th><div class="tit required">Title</div></th>
+					<td>
+						<input type="text" class="wp100" placeholder="Placeholder Example">
+					</td>
+					<th><div class="tit">Title</div></th>
+					<td>
+						<input type="text" class="wp100" placeholder="Disabled Example" disabled>
+					</td>
+				</tr>
+				<tr>
+					<th><div class="tit required">Title</div></th>
+					<td>
+						<div class="text-box">Text Box</div>
+					</td>
+					<th><div class="tit">Title</div></th>
+					<td>
+						<div class="text-box-not">Text Box Not</div>
+					</td>
+				</tr>
+				<tr>
+					<th><div class="tit">Title</div></th>
+					<td colspan="3">
+						<div class="flex gap10">
+							<select class="wp100" title="수량선택">
+								<option value="">Select1</option>
+							</select>
+							<select class="wp100" title="수량선택">
+								<option value="">Select2</option>
+							</select>
+							<select class="wp100" title="수량선택">
+								<option value="">Select3</option>
+							</select>
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th><div class="tit">Title</div></th>
+					<td colspan="3">
+						<div class="flex gap10">
+							<input type="text" class="wp100">
+							<input type="text" class="wp100">
+						</div>
+					</td>
+				</tr>
+				<tr>
+					<th><div class="tit">Title</div></th>
+					<td colspan="3">
+						<input type="text" class="wp100 danger">
+						<p class="form-caption text-red">오류 텍스트 컬러는 text-red 추가</p>
+					</td>
+				</tr>
+				<tr>
+					<th><div class="tit">Title</div></th>
+					<td colspan="3">
+						<div class="text-box">
+							<label class="lb-ch">
+								<input type="radio" name="테스트이름1" checked>
+								<span class="text">라디오1</span>
+							</label>
+							<label class="lb-ch">
+								<input type="radio" name="테스트이름1">
+								<span class="text">라디오2</span>
+							</label>
+							<label class="lb-ch">
+								<input type="radio" name="테스트이름1" disabled>
+								<span class="text">라디오2</span>
+							</label>
+							<label class="lb-ch">
+								<input type="checkbox" checked>
+								<span class="text">체크박스1</span>
+							</label>
+							<label class="lb-ch">
+								<input type="checkbox">
+								<span class="text">체크박스2</span>
+							</label>
+							<label class="lb-ch">
+								<input type="checkbox" disabled>
+								<span class="text">체크박스2</span>
+							</label>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+
+		<div class="btn-right lg">
+			<button type="button" class="btn line mr-auto" onclick="window.close()"><i class="ico close"></i> 닫기</button>
+
+			<button type="button" class="btn second"><i class="ico edit"></i> 임시저장</button>
+			<button type="button" class="btn"><i class="ico save"></i> 저장하기</button>
+		</div>
+	</div>
+</body>
+</html>

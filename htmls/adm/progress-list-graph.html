@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>통합돌봄 식사영양관리 운영시스템</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- skip navigation -->
+	<div id="skipNav" class="skip-nav">
+		<a href="#skipContent">본문 바로가기</a>
+		<a href="#gnb">주 메뉴 바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<aside id="aside">
+		<h1 class="logo">
+			<a href="/">통합돌봄<br>식사영양관리<br>운영시스템</a>
+		</h1>
+
+		<div class="login-info">
+			<div class="profile">
+				<span class="img-fit"><img src="/images/adm/sample/user.png" alt=""></span>
+				<span class="name">노인복지과</span>
+				<button class="btn xs second ml-auto"><i class="ico logout"></i> 로그아웃</button>
+			</div>
+		</div>
+
+		<div class="gnb-wrap">
+			<nav id="gnb" class="gnb">
+				<ul>
+					<li>
+						<a href=""><i class="ico1"></i> <strong>기관정보 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico2"></i> <strong>대상자 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico3"></i> <strong>식단표 관리</strong></a>
+					</li>
+					<li class="active">
+						<a href=""><i class="ico4"></i> <strong>진행현황 조회</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico5"></i> <strong>사업결과보고조회</strong></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+	
+	<main id="main">
+		<section id="skipContent" class="contents-wrap">
+			<h2 class="page-tit">진행현황 조회</h2>
+			
+			<!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+
+			<div>
+				<section class="card">
+					<div class="search-form">
+						<form>
+							<div class="flex">
+								<div class="form-group1">
+									<label for="id동일년도" class="tit">년도</label>
+									<select id="id동일년도" class="w150" title="년도 선택">
+										<option value="">년도</option>
+									</select>
+								</div>
+								<div class="form-group1">
+									<label for="id동일지역구분" class="tit">지역구분</label>
+									<select id="id동일지역구분" class="w150" title="지역구분 선택">
+										<option value="">전체</option>
+									</select>
+								</div>
+								<div class="form-group1">
+									<label for="id동일복지관" class="tit">복지관 선택</label>
+									<select id="id동일복지관" class="w150" title="복지관 선택">
+										<option value="">전체</option>
+									</select>
+								</div>
+								<button type="submit" class="btn second w90">검색</button>
+							</div>
+						</form>
+					</div>
+				</section>
+
+				<section class="card">
+					<div class="flex justify mb-30">
+						<div>
+							<button class="btn line active">연별 보기</button>
+							<button class="btn line">월별 보기</button>
+						</div>
+						<div>
+							<button class="btn white"><i class="ico table"></i> 집계표로 보기</button>
+							<button class="btn white active"><i class="ico graph"></i> 그래프로 보기</button>
+						</div>
+					</div>
+
+					<div class="chart flex center" style="height: 600px;">
+						<canvas id="myChart"></canvas>
+					</div>
+				</section>
+			</div>
+
+			<script src="/js/comm/chart.js"></script>
+			<script>
+				const ctx = document.getElementById('myChart');
+				new Chart(ctx, {
+					type: 'line',
+					data: {
+						labels: ['2019', '2020', '2021', '2022', '2023', '2024'],
+						datasets: [
+							{
+								label: '배달현황 수',
+								data: [900, 1000, 1500, 2000, 2500, 3000],
+								borderWidth: 2
+							},
+							{
+								label: '미배달현황 수',
+								data: [800, 900, 1000, 1500, 2000, 2500],
+								borderWidth: 1
+							},
+						]
+					},
+					options: {
+						scales: {
+							y: {
+								beginAtZero: true
+							}
+						}
+					}
+				});
+			</script>
+
+			<!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+
+		</section> <!-- //contents-wrap -->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrapper-->
+</body>
+</html>

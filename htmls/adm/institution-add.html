@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>기관정보 등록</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+    <script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+	<div class="win-popup">
+		
+		<div>
+			<section class="card">
+				<div class="flex justify">
+					<h3 class="group-tit">기관정보</h3>
+					<p class="top-caption"><i class="required"></i> <strong class="txt">표시 필수 입력사항</strong></p>
+				</div>
+				<table class="row">
+					<colgroup>
+						<col style="width: 20%">
+						<col style="width: 30%">
+						<col style="width: 20%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><div class="tit required">지역구분</div></th>
+							<td>
+								<select class="wp100" title="지역선택">
+									<option value="">지역구분</option>
+								</select>
+							</td>
+							<th><div class="tit required">법인유형</div></th>
+							<td>
+								<select class="wp100" title="지역선택">
+									<option value="">유형선택</option>
+								</select>
+							</td>
+						</tr>
+						<tr>
+							<th><div class="tit required">기관명</div></th>
+							<td>
+								<input type="text" class="wp100">
+							</td>
+							<th><div class="tit required">기관장</div></th>
+							<td>
+								<input type="text" class="wp100">
+							</td>
+						</tr>
+						<tr>
+							<th><div class="tit required">주소</div></th>
+							<td colspan="3">
+								<div class="flex side">
+									<input type="text" class="wp100">
+									<button type="button" class="btn second">검색</button>
+								</div>
+							</td>
+						</tr>
+						<tr>
+							<th><div class="tit required">우편번호</div></th>
+							<td>
+								<input type="number" class="wp100">
+							</td>
+							<th></th>
+							<td></td>
+						</tr>
+						<tr>
+							<th><div class="tit required">전화번호</div></th>
+							<td>
+								<input type="tel" class="wp100">
+							</td>
+							<th><div class="tit">팩스번호</div></th>
+							<td>
+								<input type="tel" class="wp100">
+							</td>
+						</tr>
+						<tr>
+							<th><div class="tit">운영주체</div></th>
+							<td>
+								<input type="text" class="wp100">
+							</td>
+							<th></th>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="flex justify mt-50">
+					<h3 class="group-tit">담당자 정보</h3>
+					<p class="top-caption"><i class="required"></i> <strong class="txt">표시 필수 입력사항</strong></p>
+				</div>
+				<table class="row">
+					<colgroup>
+						<col style="width: 20%">
+						<col style="width: 30%">
+						<col style="width: 20%">
+						<col>
+					</colgroup>
+					<tbody>
+						<tr>
+							<th><div class="tit required">담당자 성함</div></th>
+							<td>
+								<input type="text" class="wp100">
+							</td>
+							<th><div class="tit required">연락처(핸드폰)</div></th>
+							<td>
+								<input type="tel" class="wp100">
+							</td>
+						</tr>
+						<tr>
+							<th><div class="tit">소속(부서)</div></th>
+							<td>
+								<input type="text" class="wp100">
+							</td>
+							<th></th>
+							<td></td>
+						</tr>
+						<tr>
+							<th><div class="tit">전화번호</div></th>
+							<td>
+								<input type="tel" class="wp100">
+							</td>
+							<th><div class="tit">팩스번호</div></th>
+							<td>
+								<input type="tel" class="wp100">
+							</td>
+						</tr>
+					</tbody>
+				</table>
+
+				<div class="btn-right mt-50">
+					<button type="button" class="btn line" onclick="window.close()"><i class="ico close"></i> 닫기</button>
+					<button type="button" class="btn"><i class="ico save"></i> 등록하기</button>
+				</div>
+			</section>
+		</div>
+
+	</div>
+</body>
+</html>

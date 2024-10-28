@@ -1,0 +1,2049 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="홍원기">
+
+	<title>UI Style Guide</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="/css/comm/jquery-ui-1.12.1.css">
+	<link rel="stylesheet" href="/css/comm/code-style.css">
+	<link rel="stylesheet" href="/css/comm/font.css">
+	<link rel="stylesheet" href="/css/comm/reset.css">
+	<link rel="stylesheet" href="/css/comm/grid.css">
+	<link rel="stylesheet" href="/css/adm/reset.css">
+	<link rel="stylesheet" href="/css/adm/comm.css">
+	<link rel="stylesheet" href="/css/adm/form.css">
+	<style>
+		* {font-family:'Nanum Gothic','돋움', 'Dotum', sans-serif;}
+		body {background: #f2f2f2;}
+		.container {width: 100%;}
+
+		/* Header */
+		header .top {background: #222; padding: 0 20px;}
+		header .top .container {display: table;}
+		header .top .logo, header .top .right {display: table-cell; vertical-align: middle;}
+		header .top .logo {font-size: 16px;}
+		header .top .logo a {font-family: "Noto Sans KR", sans-serif; color: #fff; display: inline-block; padding: 12px 0;}
+		header .top .logo a:hover {color: #58c0f0;}
+		header .top .logo small {color: #777;}
+		header .top .right {text-align: right; font-size: 12px; color: #fff;}
+		header .top .right a {color: #fff; font-size: 13px;}
+		header .top .right a:hover {color: #58c0f0;}
+		header .top .title {color: #fff;}
+		header .main-menu {background: #fff; border-bottom: 1px solid #e1e3e4; box-shadow: 2px 0px 4px #ccc;}
+		header .main-menu .container {text-align: center;}
+		header .main-menu .title {color: #222; font-size: 24px; padding: 18px 0;}
+		
+		/* Main */
+		main {margin: 20px;}
+		main .container {
+			display: table;
+			border-spacing: 0;
+			border-collapse: collapse;
+			max-width: 1280px;
+			margin: 0 auto;
+		}
+		main .left-menu, main .contents {display: table-cell; vertical-align: top; background: #fff; border: 1px solid #e1e3e4;}
+		main .left-menu {width: 280px; min-width: 280px; overflow-y: auto;}
+		main .left-menu .title {font-size: 24px; font-family: "Noto Sans KR", sans-serif; color: #222; border-bottom: 1px solid #e1e3e4; padding-bottom: 10px; margin-bottom: 10px;}
+		main .left-menu .list-wrap > li > a {display: block; padding: 8px 0; font-size: 13px; font-weight: bold; color: #333;}
+		main .left-menu .list-wrap > li.active > a {color: #58c0f0; font-weight: 700;}
+		main .left-menu .list-wrap li a:hover {color: #58c0f0;}
+		main .left-menu .list-wrap li a.active {color: #58c0f0; font-weight: 700;}
+		main .left-menu ul.depth2 {padding-left: 14px; margin: -2px 0 6px;}
+		main .left-menu ul.depth2 li.active a {color: #58c0f0; font-weight: 700;}
+		main .left-menu ul.depth2 li a {display: block; font-size: 13px; color: #5f5f60; padding: 3px 0;}
+		main .inside {padding: 30px 30px 80px;}
+		
+		main .contents section > .title {font-size: 24px; font-family: "Noto Sans KR", sans-serif; color: #222; border-bottom: 1px solid #ccc; padding-bottom: 10px; margin-bottom: 10px;}
+		main .contents .sub-title {font-size: 16px; font-weight: bold; color: #333; margin: 35px 0 10px;}
+		main .contents .sub-title2 {font-size: 13px; font-weight: bold; color: #999; padding: 12px 20px; border-bottom: 1px solid #e1e3e4;}
+		main .contents article {border: 1px solid #e1e3e4;}
+		main .contents article:not(:last-child) {margin-bottom: 15px;}
+		main .contents article .preview {font-size: 14px; padding: 20px;}
+		main .contents .ex {font-size: 12px; position: relative; left: -1px; bottom: -1px; width: calc(100% + 2px);}
+		main .contents .ex pre {margin: 0; padding: 0;}
+		main .contents .ex pre code {margin: 0; padding: 0;}
+		main .contents .inside > section {margin-top: 50px;}
+		main .contents .inside > section:first-child {margin-top: 0px;}
+		
+		/* 상단으로 가기 */
+		.go-top {position: fixed; bottom: 30px; right: 60px; z-index: 99; display: none;}
+		.go-top a {display: block; font-size: 13px; font-weight: 700; color: #333; width: 20px; height: 20px; padding: 10px; background: #f2f2f2; border: 1px solid #e1e3e4; border-radius: 5px;}
+
+		/* 임시 */
+		.h-stack,
+        .flex-stack {margin-top: 8px;}
+        .h-stack:first-child,
+        .flex-stack:first-child {margin-top: 0;}
+        .h-stack > div {background: #f2f2f2; border: 1px solid #ccc; height: 35px;}
+        
+		.flex-stack > div {background: #f2f2f2; border: 1px solid #ccc; padding: 5px;}
+
+		.row:not(table) > * {background: #f2f2f2; border: 1px solid #ccc; text-align: center; padding: 4px 0; font-size: 12px;}
+	</style>
+
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+	<script src="/js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="/js/comm/run_prettify.js"></script>
+	<script src="/js/comm/view-comm.js.js"></script>
+	<script src="/js/comm/html-func.js"></script>
+
+	<!--script add-->
+	<script>
+		$(document).ready(function() {
+
+			//datepicker 임시용
+			$( ".datepicker" ).datepicker({
+				showOn: "both",
+				buttonImage: "/images/comm/jquery/calendar.png",
+				buttonImageOnly: true,
+				changeYear: true,
+				changeMonth: true
+			});
+
+		});
+	</script>
+</head>
+<body>
+	<header>
+		<section class="top">
+			<div class="container">
+				<div class="flex justify">
+					<h1 class="logo"><a href="#">스타일 가이드</a> <small>v2.3.0</small></h1>
+					<h2 class="title">UI Style Guide</h2>
+					<nav class="right">
+						<a href="==list.html">» Page Guide</a>
+					</nav>
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<main>
+		<div class="container">
+			<!--left menu-->
+			<aside id="left_menu" class="left-menu">
+				<div class="inside">
+					<h3 class="title">Quick List</h3>
+					<ul class="list-wrap" id="scroll_spy">
+						<li>
+                            <a href="#layoutSystem">레이아웃(그리드)</a>
+                            <ul class="depth2">
+								<li><a href="#breakpoint">Breakpoint</a></li>
+								<li><a href="#row">Row</a></li>
+								<li><a href="#grid">Grid</a></li>
+                                <li><a href="#flex">Flex</a></li>
+                            </ul>
+						</li>
+						<li>
+                            <a href="#spacing">간격</a>
+                            <ul class="depth2">
+                                <li><a href="#spacingGap">Gap(gutter)</a></li>
+                                <li><a href="#spacingMargin">Margin</a></li>
+                                <li><a href="#spacingPadding">Padding</a></li>
+                            </ul>
+						</li>
+						<li>
+							<a href="#font">폰트</a>
+							<ul class="depth2">
+								<li><a href="#fontColor">Color</a></li>
+								<li><a href="#fontSize">Size</a></li>
+								<li><a href="#fontAlign">Align</a></li>
+							</ul>
+						</li>
+						<li>
+                            <a href="#listStyle">리스트</a>
+                            <ul class="depth2">
+                                <li><a href="#listBullet">Bullet</a></li>
+                                <li><a href="#listHyphen">Hyphen</a></li>
+                                <li><a href="#listDecimal">Decimal</a></li>
+                            </ul>
+						</li>
+						<li>
+							<a href="#button">버튼</a>
+							<ul class="depth2">
+								<li><a href="#buttonOption">Default</a></li>
+								<li><a href="#buttonGroup">Group</a></li>
+								<li><a href="#buttonSize">Size</a></li>
+								<li><a href="#buttonDisabled">Disabled</a></li>
+								<li><a href="#buttonText">Text</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#table">테이블</a>
+							<ul class="depth2">
+								<li><a href="#tableBasic">Basic</a></li>
+								<li><a href="#tableCol">Scope = col</a></li>
+								<li><a href="#tableRow">Scope = row</a></li>
+								<li><a href="#tableCaption">Caption</a></li>
+							</ul>
+						</li>
+						<li>
+                            <a href="#paging">페이징</a>
+                            <ul class="depth2">
+                                <li><a href="#pagingOption">Default</a></li>
+                                <li><a href="#pagingMore">More</a></li>
+                            </ul>
+						</li>
+						<li>
+							<a href="#modal">모달</a>
+							<ul class="depth2">
+								<li><a href="#modalOption">Default</a></li>
+								<li><a href="#modalSize">Size</a></li>
+								<li><a href="#modalScroll">Scroll</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#popup">팝업</a>
+							<ul class="depth2">
+								<li><a href="#popupOption">Default</a></li>
+							</ul>
+						</li>
+						<li>
+							<a href="#images">이미지</a>
+							<ul class="depth2">
+								<li><a href="#imageEffect">Effect</a></li>
+								<li><a href="#imageRatio">Ratio</a></li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</aside>
+
+			<!--contents-->
+			<div id="contents" class="contents">
+				<div class="inside">
+
+					<section id="layoutSystem">
+                        <h3 class="title">레이아웃</h3>
+
+						<section id="breakpoint">
+							<h4 class="sub-title">Breakpoint</h4>
+							<article>
+								<h5 class="sub-title2">Grid tiers</h5>
+								<div class="preview">
+									<table class="basic size13">
+										<thead>
+											<tr>
+												<th colspan="2">Code</th>
+												<th>Device</th>
+												<th>Range</th>
+												<th>Container</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>xs</strong></td>
+												<td>Extra small</td>
+												<td>Small to large phone</td>
+												<td>&lt;768</td>
+												<td>Auto</td>
+											</tr>
+											<tr>
+												<td><strong>sm</strong></td>
+												<td>Small</td>
+												<td>Small to medium tablet</td>
+												<td>≥768</td>
+												<td>750px</td>
+											</tr>
+											<tr>
+												<td><strong>md</strong></td>
+												<td>Medium</td>
+												<td>Large tablet to laptop</td>
+												<td>≥992px</td>
+												<td>970px</td>
+											</tr>
+											<tr>
+												<td><strong>lg</strong></td>
+												<td>Large</td>
+												<td>Desktop</td>
+												<td>≥1110px</td>
+												<td>1080px</td>
+											</tr>
+											<tr>
+												<td><strong>xl</strong></td>
+												<td>Extra large</td>
+												<td>4k and ultra-wide</td>
+												<td>≥1904px</td>
+												<td>1870px</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+							</article>
+                        </section>
+
+						<section id="row">
+							<h4 class="sub-title">Row</h4>
+							<article>
+								<h5 class="sub-title2">Default Example</h5>
+								<div class="preview">
+									<div class="row">
+										<div>col-12</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div>col-6</div>
+										<div>col-6</div>
+									</div>
+									<hr>
+									<div class="row">
+										<div>col-4</div>
+										<div>col-4</div>
+										<div>col-4</div>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="row">
+		<!-- 개수에 따른 자동분배 -->
+		<div></div>
+		<div></div>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Responsive Example</h5>
+								<div class="preview">
+									<div class="row">
+										<div class="col-12">col-12</div>
+										<div class="col-8">col-8</div>
+										<div class="col-4">col-4</div>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 클래스에 따른 너비 변경 -->
+	<div class="row">
+		<div class="col-12"></div>
+		<div class="col-8"></div>
+		<div class="col-4"></div>
+	</div>
+	
+	<!-- 디바이스 크기에 따른 컬럼 변경 예제 -->
+	<div class="row">
+		<!-- First Mobile -->
+		<div class="col-12 sm-col-6"></div>
+		<div class="col-12 md-col-6"></div>
+		<div class="col-12 lg-col-6"></div>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Row Example</h5>
+								<div class="preview">
+									<div class="row">
+										<div class="col-12">1</div>
+										<div class="col-12">2</div>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 모바일만 적용 시 -->
+	<div class="row">
+		<div class="xs-col-12"></div>
+		<div class="xs-col-12"></div>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+                        </section>
+
+						<section id="grid">
+							<h4 class="sub-title">Grid (IE 미지원)</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="grid col3" style="background-color: pink; grid-auto-rows: 100px;">
+										<div class="box">Item1</div>
+										<div class="box">Item2</div>
+										<div class="box">Item3</div>
+										<div class="box">Item4</div>
+										<div class="box">Item5</div>
+										<div class="box">Item6</div>
+									</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="grid col3"> <!-- columns 변경 (ex: col2, col3, col4...) -->
+		<div>Item1</div>
+		<div>Item2</div>
+		...
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="grid col3" style="background-color: pink; grid-auto-rows: 100px;">
+										<div class="box row-span2">Item1</div>
+										<div class="box">Item2</div>
+										<div class="box">Item3</div>
+										<div class="box">Item4</div>
+										<div class="box">Item5</div>
+										<div class="box col-span2">Item6</div>
+										<div class="box">Item7</div>
+									</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="grid col3">
+		<!-- 가로 컬럼 병합 시 (2,3,4,5) -->
+		<div class="col-span2"></div>
+		
+		<!-- 세로 컬럼 병함 시 (2,3,4,5) -->
+		<div class="row-span2"></div>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="grid col12" style="background-color: pink">
+										<div class="box col-12">col-12</div>
+										<div class="box col-8">col-8</div>
+										<div class="box col-4">col-4</div>
+										<div class="box col-2">col-2</div>
+										<div class="box col-7">col-7</div>
+										<div class="box col-3">col-3</div>
+									</div>
+								</div>
+
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="grid col12">
+		<div class="col-12">col-12</div>
+		<div class="col-8">col-8</div>
+		<div class="col-4">col-4</div>
+		<div class="col-2">col-2</div>
+		<div class="col-7">col-7</div>
+		<div class="col-3">col-3</div>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+                        </section>
+
+						<section id="flex">
+							<h4 class="sub-title">Flex</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex">
+                                        <div class="box wp70">wp70</div>
+                                        <div class="box wp30">wp30</div>
+                                    </div>
+									<hr>
+									<div class="flex gap5">
+                                        <input type="text" class="wp100">
+										<button class="btn">검색</button>
+                                    </div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="flex">
+		<div class="wp70"></div>
+		<div class="wp30"></div>
+	</div>
+	
+	<!-- OR -->
+	<div class="flex">
+		<input type="text" class="wp100">
+		<button type="button"></button>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+                                    <div class="flex justify">
+                                        <div class="box">1</div>
+                                        <div class="box">2</div>
+                                        <div class="box">3</div>
+                                    </div>
+									<hr>
+									<div class="flex justify">
+                                        <div class="box">1</div>
+                                        <div class="box">2</div>
+                                        <div class="box">3</div>
+                                        <div class="box">4</div>
+                                    </div>
+									<hr>
+									<div class="flex justify">
+                                        <div>
+											<button type="button" class="btn sm">Btn1</button>
+											<button type="button" class="btn sm green">Btn2</button>
+										</div>
+										<div>
+											<button type="button" class="btn sm red">Btn3</button>
+											<button type="button" class="btn sm black">Btn4</button>
+										</div>
+                                    </div>
+									<hr>
+									<div class="flex justify">
+                                        <div>
+											<h2>Title</h2>
+										</div>
+										<div>
+											<button type="button" class="btn sm">Btn1</button>
+										</div>
+                                    </div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="flex justify">...</div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+                                    <div class="flex">
+                                        <div class="box">1</div>
+                                        <div class="ml-auto"></div>
+                                        <div class="box">2</div>
+                                        <div class="box">3</div>
+                                        <div class="box">4</div>
+                                    </div>
+                                    <hr>
+                                    <div class="flex">
+                                        <div class="box">1</div>
+                                        <div class="box">2</div>
+                                        <div class="box">3</div>
+                                        <div class="mr-auto"></div>
+										<div class="box">4</div>
+                                    </div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="flex">
+		...
+		<div class="ml-auto"></div>
+		...
+	</div>
+
+	<div class="flex">
+		...
+		<div class="mr-auto"></div>
+		...
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+					</section>
+
+					<section id="spacing">
+                        <h3 class="title">간격</h3>
+						<section id="spacingGap">
+							<h4 class="sub-title">Gap</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex gap10">
+										<input type="text" class="wp100">
+										<input type="text" class="wp100">
+										<button class="btn">검색</button>
+									</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- gap5, gap10, gap15... -->
+	<div class="flex gap10">...</div>
+	
+	<!-- 디바이스별 설정 -->
+	<div class="flex md-gap10">...</div>
+	<div class="flex lg-gap10">...</div>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+                        <section id="spacingMargin">
+							<h4 class="sub-title">Margin</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box">margin-top</div>
+									<div class="box mt-10">10px</div>
+									<div class="box mt-20">20px</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- margin-top -->
+	<div class="mt-10"></div> <!-- 수치 변경 (ex: 2, 4, 5, 6, 8, 10, 12 ...) -->
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box mb-10">10px</div>
+									<div class="box mb-20">20px</div>
+									<div class="box">margin-bottom</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- margin-bottom -->
+	<div class="mb-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex">
+										<div class="box">10px</div>
+										<div class="box ml-10">margin-left</div>
+									</div>
+									<hr>
+									<div class="flex">
+										<div class="box mr-10">margin-right</div>
+										<div class="box">10px</div>
+									</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- margin-left -->
+	<div class="ml-10"></div>
+
+	<!-- margin-right -->
+	<div class="mr-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex">
+										<div class="box wp100">10px</div>
+										<div class="box wp100 mx-10">left and right</div>
+										<div class="box wp100">10px</div>
+									</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- left and right -->
+	<div class="mx-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box">10px</div>
+									<div class="box my-10">top and bottom</div>
+									<div class="box">10px</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- top and bottom -->
+	<div class="my-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box ma-30">Margin All</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- margin all -->
+	<div class="ma-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+						<section id="spacingPadding">
+							<h4 class="sub-title">Padding</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box pa-10">Padding All : 10px</div>
+									<hr>
+									<div class="box pa-20">Padding All : 20px</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 수치 변경 (ex: 2, 4, 5, 6, 8, 10, 12 ...) -->
+	<div class="pa-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box px-30">Padding Left or Right : 30px</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 수치 변경 (ex: 2, 4, 5, 6, 8, 10, 12 ...) -->
+	<div class="px-10"></div>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="box py-30">Padding Top or Bottom : 30px</div>
+								</div>
+								
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 수치 변경 (ex: 2, 4, 5, 6, 8, 10, 12 ...) -->
+	<div class="py-30"></div>
+										</xmp></pre>
+								</div>
+							</article>
+                        </section>
+					</section>
+					
+					<section id="font">
+						<h3 class="title">폰트</h3>
+                        <section id="fontColor">
+							<h4 class="sub-title">Color</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<span class="text-primary">Primary Color</span> &nbsp;&nbsp;
+									<span class="text-secondary">Secondary Color</span> &nbsp;&nbsp;
+									
+									<span class="text-black">text-black</span> &nbsp;&nbsp;
+									<span class="text-gray">text-gray</span> &nbsp;&nbsp;
+									<span class="text-red">text-red</span> &nbsp;&nbsp;
+									<span class="text-pink">text-pink</span> &nbsp;&nbsp;
+									<span class="text-blue">text-blue</span> &nbsp;&nbsp;
+									<span class="text-green">text-green</span> &nbsp;&nbsp;
+									<span class="text-yellow">text-yellow</span> &nbsp;&nbsp;
+									
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 모든 태그 사용가능(div, p, strong 등) -->
+	<span class="text-primary"></span>
+	<span class="text-secondary"></span>
+	
+	<span class="text-black"></span>
+	<span class="text-gray"></span>
+	<span class="text-red"></span>
+	<span class="text-pink"></span>
+	<span class="text-blue"></span>
+	<span class="text-green"></span>
+	<span class="text-yellow"></span>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+						<section id="fontSize">
+							<h4 class="sub-title">Size</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<p class="size12">Font size12</p>
+									<p class="size14">Font size14</p>
+									<p class="size16">Font size16</p>
+									<p class="size20">Font size20</p>
+									<p class="size30">Font size30</p>
+									
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 모든 태크 사용 가능 -->
+	<p class="size12"></p>
+	<p class="size16"></p>
+	
+	<!-- 디바이스 크기에 따른 폰트크기 변경(xs, sm, md, lg) -->
+	<p class="size16 md-size20"></p>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+						<section id="fontAlign">
+							<h4 class="sub-title">Align</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="text-left">텍스트 좌측 정렬</div>
+									<div class="text-center">텍스트 중앙 정렬</div>
+									<div class="text-right">텍스트 우측 정렬</div>
+									<div class="text-justify">텍스트 양쪽 정렬</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="text-left"></div>
+	<div class="text-center"></div>
+	<div class="text-right"></div>
+	<div class="text-justify"></div>
+	
+	<!-- 디바이스 크기에 따른 정렬 변경 -->
+	<div class="sm-text-left"></div>
+	<div class="md-text-left"></div>
+	<div class="lg-text-left"></div>
+										</xmp></pre>
+								</div>
+							</article>
+                        </section>
+					</section>
+					
+					<section id="listStyle">
+                        <h3 class="title">리스트</h3>
+                        <section id="listBullet">
+							<h4 class="sub-title">Bullet</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<ul class="bullet">
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일</li>
+									</ul>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<ul class="bullet">
+		<li></li>
+		<li></li>
+	</ul>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<ul class="bullet size13">
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일</li>
+									</ul>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 폰트 크기 변경 시 -->
+	<ul class="bullet sm"></ul>
+	
+	<ul class="bullet size13"></ul>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<ul class="bullet">
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일 리스트 스타일
+											<ul class="depth2">
+												<li>리스트 리스트 리스트</li>
+												<li>리스트 리스트 리스트</li>
+											</ul>
+										</li>
+										<li>리스트 스타일 리스트 스타일
+											<ul class="depth2">
+												<li>리스트 리스트 리스트</li>
+												<li>리스트 리스트 리스트</li>
+											</ul>
+										</li>
+									</ul>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<ul class="bullet">
+		<li>Text
+			<ul class="depth2">
+				<li>Text</li>
+			</ul>
+		</li>
+	</ul>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+                        <section id="listHyphen">
+							<h4 class="sub-title">Hyphen</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<ul class="hyphen">
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+									</ul>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<ul class="hyphen">
+	</ul>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+                        <section id="listDecimal">
+							<h4 class="sub-title">Decimal</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<ul class="decimal">
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+										<li>리스트 스타일 리스트 스타일 리스트 스타일</li>
+									</ul>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<ul class="decimal">
+	</ul>
+										</xmp></pre>
+								</div>
+							</article>
+                        </section>
+					</section>
+					
+					<section id="button">
+						<h3 class="title">Button</h3>
+						<section id="buttonOption">
+							<h4 class="sub-title">Default</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex">
+										<button type="button" class="btn">DEFAULT</button>
+										<button type="button" class="btn line">Line</button>
+										<button type="button" class="btn" disabled>Disabled</button>
+										<button type="button" class="btn light">Light</button>
+										<button type="button" class="btn soft">Soft</button>
+										<button type="button" class="btn navy">Navy</button>
+										<button type="button" class="btn white">WHITE</button>
+										<button type="button" class="btn gray">GRAY</button>
+										<button type="button" class="btn dark">DARK</button>
+										<button type="button" class="btn black">BLACK</button>
+										<button type="button" class="btn blue">BLUE</button>
+										<button type="button" class="btn red">RED</button>
+										<button type="button" class="btn pink">PINK</button>
+										<button type="button" class="btn orange">ORANGE</button>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- a 태그 class 동일사용 / form 전송시 type → submit 변경 -->
+	<button type="button" class="btn">Cancel</button>
+	<button type="button" class="btn red">Confirm</button>
+	<button type="button" class="btn white">Reserve</button>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="buttonGroup">
+							<h4 class="sub-title">Group</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									
+									<div class="btn-group">
+										<button class="btn" disabled>동의하기</button>
+									</div>
+									<hr>
+									<div class="btn-group">
+										<button class="btn">동의하기</button>
+									</div>
+									<hr>
+									<div class="btn-group">
+										<a href="main.html" class="btn light">메인으로</a>
+										<a href="" class="btn">로그인</a>
+									</div>
+									<hr>
+									<div class="btn-group">
+										<a href="main.html" class="btn light wp30">메인으로</a>
+										<a href="" class="btn wp70">로그인</a>
+									</div>
+									<hr>
+									<div class="btn-group2">
+                                        <button class="btn light">장소추가</button>
+                                    </div>
+									<hr>
+									<div class="btn-group auto">
+                                        <button class="btn">장소추가</button>
+                                        <button class="btn light">장소추가</button>
+                                        <button class="btn white">장소추가</button>
+                                    </div>
+									<hr>
+									<div class="btn-group wrap">
+										<button type="button" class="btn soft active">Day1</button>
+										<button type="button" class="btn soft">Day2</button>
+									</div>
+									<hr>
+									<div class="btn-group st2">
+										<button class="btn white"><i class="material-icons-outlined">call</i> 전화문의</button>
+										<button class="btn white"><i class="material-icons-outlined">location_on</i> 길찾기</button>
+									</div>
+									<hr>
+									<div class="btn-group st2">
+										<button class="btn white"><i class="material-icons-outlined">call</i> 전화문의</button>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div class="btn-group">
+		<button class="btn"></button>
+		<!-- or -->
+		<a href="" class="btn"></a>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="buttonSize">
+							<h4 class="sub-title">Size</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<button type="button" class="btn xs">Extra Small</button>
+									<button type="button" class="btn sm">Small</button>
+									<button type="button" class="btn">Default</button>
+									<button type="button" class="btn lg">Large</button>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- xs, sm, lg 추가 -->
+	<button type="button" class="btn sm"></button>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="buttonDisabled">
+							<h4 class="sub-title">Disabled</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<button type="button" class="btn point" disabled>Disabled</button>
+									<button type="button" class="btn red" disabled>Disabled</button>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- disabled 속성 추가 -->
+	<button type="button" class="btn" disabled></button>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="buttonText">
+							<h4 class="sub-title">Text</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<a href="" class="txt-btn">텍스트 링크</a>
+									&nbsp;&nbsp;&nbsp;
+									<a href="" class="txt-btn size14">텍스트 링크</a>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<a href="" class="txt-btn"></a>
+	
+	<!-- Size -->
+	<a href="" class="txt-btn size14"></a>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+					</section>
+
+					<section id="table">
+						<h3 class="title">Table</h3>
+						<section id="tableBasic">
+							<h4 class="sub-title">Basic</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<table class="basic">
+										<thead>
+											<tr>
+												<th colspan="2">Code</th>
+												<th>Device</th>
+												<th>Range</th>
+												<th>Container</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>xs</strong></td>
+												<td>Extra small</td>
+												<td>Small to large phone</td>
+												<td>&lt;768</td>
+												<td>Auto</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 기본형 라인 스타일 테이블 -->
+	<table class="basic">
+		<caption></caption>
+		<colgroup>
+			<col span="2" style="background-color: red">
+			<col style="width: 10%">
+		</colgroup>
+		<thead>
+			<tr>
+				<th></th>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td></td>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<table class="basic size13">
+										<thead>
+											<tr>
+												<th colspan="2">Code</th>
+												<th>Device</th>
+												<th>Range</th>
+												<th>Container</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><strong>xs</strong></td>
+												<td>Extra small</td>
+												<td>Small to large phone</td>
+												<td>&lt;768</td>
+												<td>Auto</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 폰트크기 size 클래스 추가 -->
+	<table class="basic size13">
+	</table>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+						<section id="tableCol">
+							<h4 class="sub-title">Col</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="table-wrapper">
+										<table class="col">
+											<caption>캡션 제목</caption>
+											<colgroup>
+												<col span="4" style="width: 25%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th>제목1</th>
+													<th>제목2</th>
+													<th>제목3</th>
+													<th>제목4</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><input type="checkbox"></td>
+													<td>내용2</td>
+													<td>내용3</td>
+													<td>내용4</td>
+												</tr>
+											</tbody>
+										</table>
+
+										<table class="col">
+											<caption>캡션 제목</caption>
+											<colgroup>
+												<col span="4" style="width: 25%">
+											</colgroup>
+											<thead>
+												<tr>
+													<th>제목1</th>
+													<th>제목2</th>
+													<th>제목3</th>
+													<th>제목4</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<th><input type="checkbox"></th>
+													<td class="bg1">내용2</td>
+													<td class="bg2">내용3</td>
+													<td>내용4</td>
+												</tr>
+											</tbody>
+										</table>
+									</div> <!-- //table-wrapper -->
+									
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<table class="col"> <!-- + center -->
+		<caption>테이블 캡션 제목</caption> <!-- 웹접근성 -->
+		<colgroup>
+			<col style="width: 15%">
+			<col>
+		</colgroup>
+		<thead>
+			<tr>
+				<th></th>
+				<th></th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr>
+				<td></td>
+				<td class="right"></td> <!-- left, center, right -->
+			</tr>
+		</tbody>
+	</table>
+	
+	<!-- 반응형 버전 -->
+	<table class="col res">
+	</table>
+	
+	<!-- 모바일 스크롤 버전 -->
+	<div class="table-wrapper scroll">
+		<table class="col">
+		</table>
+	</div>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="tableRow">
+							<h4 class="sub-title">Row</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<table class="row">
+										<caption></caption>
+										<colgroup>
+											<col style="width: 15%">
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">제목1</th>
+												<td>내용1</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													제목2
+													<div class="required"></div>
+												</th>
+												<td>내용2</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<table class="row">
+		<caption>캡션 제목</caption>
+		<colgroup>
+			<col style="width: 20%">
+			<col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th></th>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+										</xmp></pre>
+								</div>
+							</article>
+
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<p class="caption top right"><i class="required"></i> <strong class="point-color">표시 필수 입력사항</strong></p>
+									<table class="row">
+										<caption></caption>
+										<colgroup>
+											<col style="width: 15%">
+											<col>
+										</colgroup>
+										<tbody>
+											<tr>
+												<th scope="row">
+													<div class="tit required">필수 제목1</div>
+												</th>
+												<td>내용1</td>
+											</tr>
+											<tr>
+												<th scope="row">
+													<div class="tit">필수 제목1</div>
+												</th>
+												<td>내용2</td>
+											</tr>
+										</tbody>
+									</table>
+									<p class="caption bottom">하단 설명 텍스트</p>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<p class="caption right"><i class="required"></i> <strong class="point-color">표시 필수 입력사항</strong></p>
+	<table class="row">
+		<caption>캡션 제목</caption>
+		<colgroup>
+			<col style="width: 20%">
+			<col>
+		</colgroup>
+		<tbody>
+			<tr>
+				<th scope="row"></th>
+				<td></td>
+			</tr>
+		</tbody>
+	</table>
+	<p class="caption">하단 설명 텍스트</p>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="tableCaption">
+							<h4 class="sub-title">Caption</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<p class="caption top right">상단 설명 텍스트</p>
+									<table class="col">
+										<caption>캡션 제목</caption>
+										<colgroup>
+											<col span="4" style="width: 25%">
+										</colgroup>
+										<thead>
+											<tr>
+												<th>제목1</th>
+												<th>제목2</th>
+												<th>제목3</th>
+												<th>제목4</th>
+											</tr>
+										</thead>
+										<tbody>
+											<tr>
+												<td><input type="checkbox"></td>
+												<td>내용2</td>
+												<td>내용3</td>
+												<td>내용4</td>
+											</tr>
+										</tbody>
+									</table>
+									<p class="caption bottom">하단 설명 텍스트</p>
+									
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- Default -->
+	<p class="caption"></p>
+	
+	<!-- 상단 -->
+	<p class="caption top"></p>
+	
+	<!-- 하단 -->
+	<p class="caption bottom"></p>
+	
+	<!-- 정렬 옵션 -->
+	<p class="caption right"></p> <!-- left, center, right -->
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+					</section>
+
+					<section id="paging">
+						<h3 class="title">페이징</h3>
+						<section id="pagingOption">
+							<h4 class="sub-title">Default</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="paging-wrap">
+										<ul>
+											<li class="first"><a href=""></a></li>
+											<li class="prev"><a href=""></a></li>
+											<li class="active">1</li>
+											<li><a href="">2</a></li>
+											<li><a href="">3</a></li>
+											<li><a href="">4</a></li>
+											<li><a href="">5</a></li>
+											<li class="next"><a href=""></a></li>
+											<li class="last"><a href=""></a></li>
+										</ul>
+									</div> <!-- //paging-wrap -->
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+														<xmp>
+	<div class="paging-wrap">
+		<ul>
+			<li class="first"><a href=""></a></li>
+			<li class="prev"><a href=""></a></li>
+			<li class="active">1</li>
+			<li><a href="">2</a></li>
+			<li><a href="">3</a></li>
+			<li><a href="">4</a></li>
+			<li><a href="">5</a></li>
+			<li class="next"><a href=""></a></li>
+			<li class="last"><a href=""></a></li>
+		</ul>
+	</div>
+														</xmp></pre>
+								</div>
+							</article>
+						</section>
+
+						<section id="pagingMore">
+							<h4 class="sub-title">More</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="bottom-more">
+										<button type="button" class="btn white">더보기</button>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+														<xmp>
+	<div class="bottom-more">
+		<button type="button" class="btn white">더보기</button>
+	</div>
+														</xmp></pre>
+								</div>
+							</article>
+						</section>
+					</section>
+
+                    <section id="modal">
+                        <h3 class="title">모달</h3>
+                        <section id="modalOption">
+                            <h4 class="sub-title">Default</h4>
+                            <article>
+                                <h5 class="sub-title2">Example</h5>
+                                <div class="preview">
+                                    <div class="flex gap5">
+                                        <button type="button" class="btn" onclick="modalShow('#modalType1')">Modal Type1</button>
+                                        <button type="button" class="btn" onclick="modalShow('#modalType2')">Modal Type2</button>
+                                        <button type="button" class="btn" onclick="modalShow('#allimModal')">Modal Type3</button>
+                                    </div>
+                                </div>
+                                <div class="ex">
+                                    <pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- 웹접근성 -->
+	<button type="button" class="btn" onclick="modalShow('#targetID')" aria-label="버튼명">
+		<span aria-hidden="true">의미없는 텍스트</span>
+	</button>
+	<button type="button" class="btn" onclick="modalShow('#targetID')"><span class="hidden">버튼명</span></button>
+	
+	<!-- Defulat Button -->											
+	<button type="button" class="btn" onclick="modalShow('#targetID')"></button>
+
+	
+	
+	<!-- Modal A -->
+	<div id="targetID" class="modal"> <!-- Default -->
+	
+	<!-- 웹접근성 -->
+	<div id="targetID" class="modal" role="dialog" aria-labelledby="제목ID동일입력" aria-modal="false"> <!-- 웹접근성(클릭시 true 자동전환!) -->
+		<div class="modal-bg" onclick="modalHide('#targetID')"></div> <!-- 배경클릭시 영상이 계속 재생되는 오류에 따른 추가 -->
+		<div class="modal-content">
+			<div class="content">
+				<div class="head">
+					<h3 class="title" id="제목ID동일입력">Modal Title</h3>
+					<button type="button" class="close"><span class="hidden">닫기</span></button>
+				</div>
+				<div class="main">
+					...
+				</div>
+			</div>
+		</div>
+	</div> <!-- //modal -->
+	
+	<!-- Modal B -->
+	<div id="targetID" class="modal">
+		<div class="modal-bg" onclick="modalHide('#targetID')"></div>
+		<div class="modal-content">
+			<div class="content">
+				<div class="main">
+					<button type="button" class="close"><span class="hidden">닫기</span></button>
+					<div class="wrapper center">
+						...
+					</div>
+				</div>
+			</div>
+		</div>
+	</div> <!-- //modal -->
+										</xmp></pre>
+                                </div>
+                            </article>
+
+                            <!-- Modal Type1 -->
+                            <div id="modalType1" class="modal">
+                                <div class="modal-bg" onclick="modalHide('#modalType1')"></div>
+                                <div class="modal-content">
+                                    <div class="content">
+                                        <div class="head">
+                                            <h3 class="title">Modal Title</h3>
+                                            <button type="button" class="close"><strong>닫기</strong></button>
+                                        </div>
+                                        <div class="main">
+											<div class="">
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- //modal -->
+
+							<!-- Modal Type2 -->
+                            <div id="modalType2" class="modal">
+								<div class="modal-bg" onclick="modalHide('#modalType2')"></div>
+								<div class="modal-content">
+									<div class="content">
+										<div class="main">
+											<button type="button" class="close"><strong>닫기</strong></button>
+											<div class="wrapper center">
+												<div class="basic">
+													<img src="/images/adm/icon/info-checked.png" alt="" class="t-ico">
+													<p class="txt">Day 1에 오동도를 추가하였습니다.</p>
+													<p class="lg-txt">내 일정으로 돌아가시겠습니까?</p>
+												</div>
+												<div class="btn-group">
+													<button type="button" class="btn light">예</button>
+													<button type="button" class="btn white" onclick="modalHide('#modalType2')">계속 추가하기</button>
+												</div>
+											</div>
+										</div>
+									</div> <!-- //content -->
+								</div> <!-- //modal-content -->
+							</div> <!-- //modal -->
+
+							<!-- Modal Type3 -->
+                            <div id="allimModal" class="modal bottom">
+								<div class="modal-bg" onclick="modalHide('#allimModal')"></div>
+								<div class="modal-content">
+									<div class="content">
+										<div class="main">
+											<button type="button" class="close"><strong>닫기</strong></button>
+											<div class="wrapper center">
+												<div class="basic">
+													<img src="/images/adm/icon/info-checked.png" alt="" class="t-ico">
+													<p class="txt lg">게시물을 삭제하시겠습니까?</p>
+													<p class="txt sm">“타이틀”에 등록하신 리뷰를 삭제하시겠습니까?<br>
+														삭제 후 해당 게시물을 다시 확인할 수 없습니다.
+													</p>
+												</div>
+												<div class="btn-group">
+													<button type="button" class="btn light" onclick="modalHide('#allimModal')">취소</button>
+													<button type="button" class="btn white">삭제</button>
+												</div>
+											</div>
+										</div>
+									</div> <!-- //content -->
+								</div> <!-- //modal-content -->
+							</div> <!-- //modal -->
+                        </section>
+
+                        <section id="modalSize">
+                            <h4 class="sub-title">Size</h4>
+                            <article>
+                                <h5 class="sub-title2">Example</h5>
+                                <div class="preview">
+                                    <div>
+                                        <button type="button" class="btn point" onclick="modalShow('#modalSmall')">Small Modal</button>
+                                        <button type="button" class="btn point" onclick="modalShow('#modalLage')">Large Modal</button>
+                                    </div>
+                                </div>
+                                <div class="ex">
+                                    <pre class="prettyprint linenums:1">
+										<xmp>
+	<div id="targetID" class="modal">
+		<div class="modal-bg"></div>
+		<div class="modal-content lg"> <!-- sm, lg -->
+			...
+		</div>
+	</div>
+										</xmp></pre>
+                                </div>
+                            </article>
+
+                            <!-- Modal -->
+                            <div id="modalSmall" class="modal">
+                                <div class="modal-bg" onclick="modalHide('#modalSmall')"></div>
+                                <div class="modal-content sm">
+                                    <div class="content">
+                                        <div class="head">
+                                            <h3 class="title">Modal Title</h3>
+                                            <button type="button" class="close"><strong>닫기</strong></button>
+                                        </div>
+                                        <div class="main">
+											<div class="">
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- //modal -->
+
+                            <div id="modalLage" class="modal">
+                                <div class="modal-bg" onclick="modalHide('#modalLage')"></div>
+                                <div class="modal-content lg">
+                                    <div class="content">
+                                        <div class="head">
+                                            <h3 class="title">타이틀 제목</h3>
+                                            <button type="button" class="close"><strong>닫기</strong></button>
+                                        </div>
+                                        <div class="main">
+											<div class="">
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- //modal -->
+                            <!-- //Modal -->
+
+
+                            <article>
+                                <h5 class="sub-title2">Example</h5>
+                                <div class="preview">
+                                    <div>
+                                        <button type="button" class="btn point" onclick="modalShow('#modalOther')">Other Modal</button>
+                                    </div>
+                                </div>
+                                <div class="ex">
+                                    <pre class="prettyprint linenums:1">
+										<xmp>
+	<div id="targetID" class="modal">
+		<div class="modal-bg"></div>
+		<div class="modal-content" data-width="750"> <!-- width 직접 수치 입력 -->
+			...
+		</div>
+	</div>
+										</xmp></pre>
+                                </div>
+                            </article>
+
+                            <!-- Modal -->
+                            <div id="modalOther" class="modal">
+                                <div class="modal-bg" onclick="modalHide('#modalOther')"></div>
+                                <div class="modal-content" data-width="750">
+                                    <div class="content">
+                                        <div class="head">
+                                            <h3 class="title">타이틀 제목</h3>
+                                            <button type="button" class="close"><strong>닫기</strong></button>
+                                        </div>
+                                        <div class="main">
+											<div class="">
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능<br>
+												내용입력... 안에서는 div 맘껏 사용가능
+											</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- //modal -->
+                            <!-- //Modal -->
+                        </section>
+
+                        <section id="modalScroll">
+                            <h4 class="sub-title">Scroll</h4>
+                            <article>
+                                <h5 class="sub-title2">Example</h5>
+                                <div class="preview">
+                                    <div>
+                                        <button type="button" class="btn point" onclick="modalShow('#scrollModal')">Scroll Modal</button>
+                                    </div>
+                                </div>
+                                <div class="ex">
+                                    <pre class="prettyprint linenums:1">
+										<xmp>
+	<div id="targetID" class="modal" data-scroll="true">
+		<div class="modal-bg"></div>
+		<div class="modal-content">
+			...
+		</div>
+	</div>
+										</xmp></pre>
+                                </div>
+                            </article>
+
+                            <!-- Modal -->
+                            <div id="scrollModal" class="modal" data-scroll="true">
+                                <div class="modal-bg" onclick="modalHide('#scrollModal')"></div>
+                                <div class="modal-content">
+                                    <div class="content">
+                                        <div class="head">
+                                            <h3 class="title">타이틀 제목</h3>
+                                            <button type="button" class="close"><strong>닫기</strong></button>
+                                        </div>
+                                        <div class="main">
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                            내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>내용길어지는 경우 테스트 내용길어지는 경우 테스트<br><br>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div> <!-- //modal -->
+                        </section>
+                    </section>
+					
+					<section id="popup">
+						<h3 class="title">팝업</h3>
+						<section id="popupOption">
+							<h4 class="sub-title">Default</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div>
+										<button type="button" class="btn point" onclick="window.open('server.html', 'Title', 'width=500, height=600, left=50, top=50, resizable = yes')">Window popup</button>
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- a or button -->
+	<button type="button" class="btn" onclick="window.open('fileName.html', 'Title', 'width=500, height=600')">버튼명</button>
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+					</section>
+					
+                    <section id="images">
+                        <h3 class="title">이미지</h3>
+                        <section id="imageEffect">
+							<h4 class="sub-title">Effect</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex spacer10">
+										<img src="/images/adm/sample/user.png" alt="" width="200">
+										<img src="/images/adm/sample/user.png" alt="" width="200" class="del">
+									</div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<!-- del 추가 -->
+	<img src="" alt="" class="del">
+										</xmp></pre>
+								</div>
+							</article>
+						</section>
+						
+						<section id="imageRatio">
+							<h4 class="sub-title">Ratio</h4>
+							<article>
+								<h5 class="sub-title2">Example</h5>
+								<div class="preview">
+									<div class="flex spacer10">
+										<div style="width: 200px">
+											<div class="fit11">
+												<img src="/images/adm/sample/user.png" alt="">
+											</div>
+										</div>
+
+										<div style="width: 200px">
+											<div class="fit43">
+												<img src="/images/adm/sample/user.png" alt="">
+											</div>
+										</div>
+										
+										<div style="width: 200px">
+											<div class="fit169">
+												<img src="/images/adm/sample/user.png" alt="">
+											</div>
+										</div>
+									</div>
+
+									<hr>
+
+									<div class="user-fit"><img src="/images/adm/not/user.png" alt=""></div>
+								</div>
+								<div class="ex">
+									<pre class="prettyprint linenums:1">
+										<xmp>
+	<div style="width: 200px"> <!-- css style 처리 -->
+		<div class="fit169"> <!-- 1:1(fit11), 4:3(fit43), 16:9(fit169) -->
+			<img src="" alt="">
+		</div>
+	</div>
+	
+	<!-- User -->
+	<div class="user-fit"><img src="/images/adm/not/user.png" alt=""></div>
+										</xmp></pre>
+								</div>
+							</article>
+                        </section>
+                    </section>
+
+					<br><br><br><br><br><br><br><br><br><br>
+					
+				</div>
+			</div> <!--//contents-->
+		</div> <!--//container-->
+	</main>
+
+	<footer>
+		<div class="go-top"><a id="go_top" href="">Top</a></div>
+	</footer>
+	
+	<script>
+		var didScroll;	//스크롤 감지
+		
+		
+		//스크롤스파이
+		var lastId,
+			topMenu = $("#scroll_spy"),
+			//topMenuHeight = topMenu.outerHeight()+15,
+			topMenuHeight = 32,
+			// All list items
+			menuItems = topMenu.find("a"),
+			// Anchors corresponding to menu items
+			scrollItems = menuItems.map(function(){
+				var item = $($(this).attr("href"));
+				if (item.length) { return item; }
+			});
+		
+		menuItems.click(function(e){
+			var href = $(this).attr("href"),
+				offsetTop = href === "#" ? 0 : $(href).offset().top-topMenuHeight-10;
+			$('html, body').stop().animate({
+				scrollTop: offsetTop
+			}, 300);
+			e.preventDefault();
+		});
+		
+		//top button
+		$('#go_top').on('click', function(){
+			$( 'html, body' ).animate( { scrollTop : 0 }, 400 );
+			return false;
+		});
+		
+		
+		$(window).scroll(function() {
+			didScroll = true; 			//스크롤 이벤트 부하에 따른 setInterval 사용
+		});
+		
+		setInterval(function() {
+			if(didScroll) {
+				/*hasScrolled();*/
+				scroll_leftMenu();		//left menu
+				scroll_topButton();		//top button
+				scroll_spy();			//scroll spy
+				scroll_endBottom();		//end botton
+				
+				didScroll = false;
+			}
+		}, 50);
+		
+		function hasScrolled() {
+			
+		}
+		
+		//left menu
+		function scroll_leftMenu() {
+			var scrollHeight = $(window).scrollTop();
+			
+			if(scrollHeight > 190){
+				$("#left_menu").css({
+					'position': 'fixed',
+					'top': '0px',
+					'bottom': '0px'
+				});
+				$('#contents').css({
+					'padding-left': '280px'
+				});
+				$("#left_menu .title").hide();
+			}
+			else {
+				$("#left_menu").css({
+					'position': 'static',
+					'top': 'auto',
+					'bottom': 'auto'
+				});
+				$('#contents').css({
+					'padding-left': '0'
+				});
+				$("#left_menu .title").show();
+			}
+		}
+		
+		//top button
+		function scroll_topButton() {
+			var scrollHeight = $(window).scrollTop();
+			
+			if(scrollHeight > 500) {
+				$('.go-top').fadeIn('500');
+			}
+			else {
+				$('.go-top').fadeOut('100');
+			}
+		}
+		
+		//스크롤 스파이
+		function scroll_spy() {
+			// Get container scroll position
+			var fromTop = $(this).scrollTop()+topMenuHeight+100;
+
+			// Get id of current scroll item
+			var cur = scrollItems.map(function(){
+				if ($(this).offset().top < fromTop)
+					return this;
+			});
+			// Get the id of the current element
+			cur = cur[cur.length-1];
+			var id = cur && cur.length ? cur[0].id : "";
+
+			if (lastId !== id) {
+				lastId = id;
+				// Set/remove active class
+				menuItems
+					.parent().removeClass("active")
+					.end().filter("[href='#"+id+"']").parent().addClass("active");
+			}
+		}
+		
+		//스크롤이 맨아래 위치했을때
+		function scroll_endBottom() {
+			if ($(window).scrollTop() == $(document).height() - $(window).height()) {
+				alert('맨아래 페이지 입니다.');
+			}
+		}
+		
+		//특정 div 하단에 위치했을때
+		$(".layer-popup .scroll").scroll( function() {
+			var elem = $(".layer-popup .scroll");
+
+			if ( elem[0].scrollHeight - elem.scrollTop() == elem.outerHeight()) {
+				//alert("End of Yellow");
+			}
+		});
+	</script>
+</body>
+</html>

@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="author" content="홍원기">
+
+	<title>Site Map</title>
+
+	<!-- css -->
+	<link rel="stylesheet" href="/css/comm/reset.css">
+	<link rel="stylesheet" href="/css/comm/grid.css">
+	<link rel="stylesheet" href="/css/adm/reset.css">
+	<style>
+		/* Reset */
+		.text-black {color: #161213 !important;}
+		.text-gray {color: #8b8b8b !important;}
+		.text-red {color: #eb3b3e !important;}
+		.text-pink {color: #e5555e !important;}
+		.text-blue {color: #0069a3 !important;}
+		.text-green {color: #019a2e !important; opacity: 0.7;}
+		.text-yellow {color: #fbbb01 !important;}
+		.translucence {opacity: .5 !important;}
+		.bg-red {background: #d92b2b !important;}
+		a.not {opacity: 0.3; color: red;}
+
+
+		/* Default */
+		body {
+			background: #fafafa;
+			font-family: "돋움", "Dotum", "맑은고딕", sans-serif;
+			font-weight: normal;
+		}
+
+		hr {margin: 20px 0;}
+		.container {width: 100%;}
+
+		/* Contents */
+		header .top {
+			background: #07070D;
+			padding: 0 20px;
+		}
+
+		header .top .container {display: table;}
+		header .top .logo,
+		header .top .right {
+			display: table-cell;
+			vertical-align: middle;
+		}
+
+		header .top .logo {font-size: 15px;}
+		header .top .logo a {
+			font-family: "Noto Sans KR", sans-serif;
+			color: #fff;
+			display: inline-block;
+			padding: 12px 0;
+		}
+
+		header .top .logo a:hover {color: #58c0f0;}
+		header .top .right {
+			text-align: right;
+			font-size: 12px;
+			color: #fff;
+		}
+
+		header .top .right strong {
+			color: #58c0f0;
+			font-size: 13px;
+		}
+
+		header .top .right span {
+			display: inline-block;
+			color: #fff;
+		}
+
+		header .top .right span.line {
+			color: #999;
+			margin: 0 10px;
+		}
+
+		header .top .right a {display: inline-block; color: #fff;}
+		header .top .right a:hover {color: #58c0f0;}
+		header .top .title {color: #fff;}
+		header .main-menu {
+			background: #fff;
+			border-bottom: 1px solid #e1e3e4;
+			box-shadow: 2px 0px 4px #ccc;
+		}
+
+		header .main-menu .container {text-align: center;}
+		header .main-menu .title {
+			color: #222;
+			font-size: 24px;
+			padding: 18px 0;
+		}
+
+		main {
+			margin: 20px;
+			min-height: 350px;
+			color: #777;
+		}
+
+		main .list-wrap {
+			display: flex;
+			flex-wrap: wrap;
+			max-width: 1200px;
+			margin: 0 auto;
+		}
+
+		main .list-wrap .list {
+			width: calc(25% - 8px);
+			background: #fff;
+			border: 1px solid #e1e3e4;
+			border-radius: 8px;
+			padding: 15px;
+			min-width: 200px;
+			margin: 0 10px 10px 0;
+		}
+
+		main .list-wrap .list:nth-child(4n + 0) {margin-right: 0;}
+		main .list-wrap .list:first-child h3 {background: #d92b2b;}
+		main .list-wrap .list:nth-child(even) h3 {background: #373740;}
+		main .list-wrap .list:nth-child(2) h3 {background: #5c7cfa;}
+		main .list h3 {
+			font-size: 14px;
+			font-family: "Noto Sans KR", sans-serif;
+			color: #fff;
+			background: #07070D;
+			border-radius: 4px;
+			padding: 8px 10px;
+			margin-bottom: 8px;
+		}
+
+		main a {
+			text-decoration: none !important;
+			color: #333;
+			position: relative;
+			transition: all .7s ease;
+		}
+
+		main a::after {
+			content: ">";
+			display: block;
+			position: absolute;
+			right: -10px;
+			top: 50%;
+			transform: translateY(-50%);
+			font-size: 11px;
+		}
+
+		main a:hover {
+			color: #0984e3 !important;
+		}
+
+		main a.point {
+			color: #4562fd;
+			font-weight: bold;
+		}
+
+		main ul li a,
+		main ul strong {
+			display: block;
+			font-size: 12px;
+			line-height: 19px;
+			padding: 0;
+			margin: 0;
+		}
+
+		main ul.depth3 li a,
+		main ul.depth3 li strong {
+			font-size: 11px;
+			line-height: 18px;
+		}
+
+		/* main ul.depth4 li a,
+		main ul.depth4 li strong {font-size: 11px; line-height: 18px;} */
+
+		main ul li strong {font-weight: normal;}
+		main ul li small {color: #777;}
+		main ul li.equ {list-style: none;}
+		main ul.depth1 {
+			margin: 0 10px 0 15px;
+			padding: 0 10px 0;
+		}
+
+		main ul.depth1>li {list-style: circle;}
+		main ul.depth1>li:not(:last-child) {margin-bottom: 1px;}
+		main ul.depth2 {margin-bottom: 5px;}
+		main ul.depth2 li a::before,
+		main ul.depth2 li strong::before {
+			content: "-";
+			display: inline-block;
+			margin-right: 5px;
+		}
+		main ul.depth3 {
+			margin-bottom: 5px;
+			padding-left: 11px;
+		}
+		main ul.depth3 li a::before,
+		main ul.depth3 li strong::before {
+			content: "•";
+		}
+		main ul.depth4 {
+			margin-bottom: 2px;
+			padding-left: 11px;
+		}
+		main ul.depth4 li a::before {
+			content: "·";
+		}
+
+		main .list.ex a {
+			color: #777;
+		}
+		main .list.ex ul.depth1 > li {
+			color: #333;
+		}
+
+		footer h3 {
+			margin-bottom: 10px;
+			font-size: 16px;
+			font-family: "Noto Sans KR", sans-serif;
+		}
+		footer .warning-info {
+			background: #fff;
+			padding: 30px;
+			font-size: 14px;
+			color: #333;
+			border: 1px solid #e1e3e4;
+		}
+		footer .warning-info h4 {margin-top: 20px;}
+		footer .warning-info h4::before {content: "["}
+		footer .warning-info h4::after {content: "]"}
+		footer .warning-info p {
+			margin: 5px 0;
+			font-size: 13px;
+			line-height: 18px;
+		}
+		footer .warning-info p::before {
+			content: "-";
+			display: inline-block;
+			margin-right: 5px;
+		}
+	</style>
+
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+	<script>
+		$(document).ready(function () {
+			var page_count = $('li a').length;
+			$('#count').text(page_count);
+		})
+	</script>
+</head>
+
+<body>
+	<header>
+		<section class="top">
+			<div class="container">
+				<div class="flex justify">
+					<h1 class="logo"><a href="#">통합 돌봄 건강식단 배송 서비스 운영시스템</a></h1>
+					<h2 class="title">Page Guide</h2>
+					<nav class="right">
+						<span>작업페이지 : <strong id="count"></strong>page</span>
+						<span class="line">|</span>
+						<a href="=common.html">» Style Guide</a>
+					</nav>
+				</div>
+			</div>
+		</section>
+	</header>
+
+	<main>
+		<section class="list-wrap">
+			<div class="list">
+				<h3>Info</h3>
+				<ul class="depth1">
+					<li><a href="=common.html" target="_blank">UI Style Guide</a></li>
+				</ul>
+			</div>
+
+			<div class="list">
+                <h3>Layout</h3>
+                <ul class="depth1">
+                    <li><a href="=layout.html" target="_blank">Layout - Default</a></li>
+					<li><a href="error.html" target="_blank">Error</a></li>
+                </ul>
+            </div>
+			
+			<div class="list">
+				<h3>LOGIN / Main</h3>
+				<ul class="depth1">
+					 <!-- <li><a href="login.html" target="_blank">로그인</a></li> -->
+				</ul>
+			</div>
+			
+			<div class="list ex">
+                <h3>Example</h3>
+                <ul class="depth1">
+					<li><strong>폼</strong>
+						<ul class="depth2">
+							<li><a href="ex-search.html" target="_blank">검색폼</a></li>
+							<li><a href="ex-input.html" target="_blank">입력폼</a></li>
+							<li><a href="ex-checkbox.html" target="_blank">체크박스, 라디오</a></li>
+							<li><a href="ex-file.html" target="_blank">파일</a></li>
+						</ul>
+					</li>
+					<li><strong>테이블</strong>
+						<ul class="depth2">
+							<li><a href="ex-table.html" target="_blank">목록형</a></li>
+							<li><a href="ex-table-detail.html" target="_blank">상세형</a></li>
+							<li><a href="ex-table-jsGrid.html" target="_blank">jsGrid</a></li>
+							<li><a href="javascript:void(0)" onclick="window.open('popup-sample.html', '팝업 제목', 'width=1000, height=700')">팝업형</a></li>
+						</ul>
+					</li>
+					<li><strong>컴포넌트</strong>
+						<ul class="depth2">
+							<li><a href="ex-navs-tabs.html" target="_blank">내비게이션 & 탭</a></li>
+							<li><a href="ex-button.html" target="_blank">버튼</a></li>
+							<li><a href="ex-chips.html" target="_blank">칩스(단일, 다중)</a></li>
+							<li><a href="ex-modal.html" target="_blank">모달, 팝업</a></li>
+							<li><a href="ex-typography.html" target="_blank">타이포그래피</a></li>
+							<li><a href="ex-info-display.html" target="_blank">정보 표시</a></li>
+							<li><a href="ex-spinner.html" target="_blank">스피너(로딩)</a></li>
+						</ul>
+					</li>
+                </ul>
+            </div>
+
+			<div class="list ex">
+				<h3>지자체(노인복지과) 운영시스템</h3>
+				<ul class="depth1">
+					<li><strong>기관정보 관리</strong>
+						<ul class="depth2">
+							<li><a href="institution-list.html" target="_blank">목록</a></li>
+							<!-- <li><a href="institution-detail.html" target="_blank">상세</a></li> -->
+							<li><a href="javascript:void(0)" onclick="window.open('institution-add.html', '기관등록', 'width=1000, height=750')">등록</a></li>
+							<li><a href="javascript:void(0)" onclick="window.open('institution-edit.html', '기관정보 수정', 'width=1000, height=750')">수정</a></li>
+						</ul>
+					</li>
+					<li><strong>대상자 관리</strong>
+						<ul class="depth2">
+							<li><a href="javascript:void(0)" onclick="window.open('subjects-detail.html', '대상자 상세', 'width=1000, height=750')">상세</a></li>
+						</ul>
+					</li>
+					<li><strong>식단표 관리</strong>
+						<ul class="depth2">
+							<li><a href="table-meals.html" target="_blank">목록</a></li>
+						</ul>
+					</li>
+					<li><strong>진행현황 조회</strong>
+						<ul class="depth2">
+							<li><a href="progress-list-graph.html" target="_blank">목록 (그래프)</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+
+			<div class="list ex">
+				<h3>수행기관(복지관) 운영시스템</h3>
+				<ul class="depth1">
+					<li><strong>식단표 관리</strong>
+						<ul class="depth2">
+							<li><strong>식단표 캘린더</strong>
+								<ul class="depth3">
+									<li><a href="table-meals2.html" target="_blank">목록</a></li>
+									<li><a href="javascript:void(0)" onclick="window.open('table-meals-select.html', '식단표 선택', 'width=1000, height=750')">상세</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li><strong>진행현황 조회</strong>
+						<ul class="depth2">
+							<li><a href="javascript:void(0)" onclick="window.open('progress-detail.html', '진행현황(상세)', 'width=1000, height=750')">상세</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</section>
+	</main>
+
+	<footer>
+		<div class="warning-info">
+			<h3>Memo</h3>
+			<!-- <p>콘텐츠 좌우 패딩 → .container</p> -->
+			<!-- <p>콘텐츠 상하좌우 패딩 → .inner</p> -->
+		</div>
+	</footer>
+</body>
+
+</html>

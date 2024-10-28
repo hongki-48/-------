@@ -1,0 +1,186 @@
+/* Layout */
+.win-popup {
+    min-height: 100vh;
+    background: #fff;
+    padding: 25px;
+}
+
+
+
+/* Reset */
+.win-popup table.row > thead > tr > th,
+.win-popup table.row > tbody > tr > th,
+.win-popup table.row > tbody > tr > td {
+    height: 55px;
+    font-size: 15px;
+    line-height: 20px;
+}
+
+.win-popup input[type="text"],
+.win-popup input[type="password"],
+.win-popup input[type="tel"],
+.win-popup input[type="number"],
+.win-popup input[type="email"],
+.win-popup input[type="search"],
+.win-popup input[type="date"],
+.win-popup input[type="file"],
+.win-popup select,
+.win-popup .text-box,
+.win-popup .text-box-not,
+.win-popup .lb-ch .text {
+    font-size: 15px;
+}
+
+.win-popup .tit.required::before {
+    left: 12px;
+}
+
+
+
+/* Title */
+.popup-tit {
+    position: relative;
+    font-weight: 700;
+    font-size: 34px;
+    padding: 0 2px 10px;
+    margin-bottom: 70px;
+}
+.popup-tit::before,
+.popup-tit::after {
+    content: "";
+    position: absolute;
+    bottom: 0;
+    width: 51%;
+    height: 4px;
+}
+.popup-tit::before {
+    left: 0;
+    background: #91CD55;
+}
+.popup-tit::after {
+    right: 0;
+    background: #2DAC8F;
+}
+
+
+
+/* Card */
+.card-shadow {
+    border-radius: 15px;
+    box-shadow: 0px 4px 10px 3px #00000012;
+    padding: 15px;
+}
+
+
+
+/* Top Buttons */
+.top-right-btns {
+    position: absolute;
+    z-index: 3;
+    top: 0;
+    right: 0;
+    display: flex;
+    justify-content: flex-end;
+    padding: 15px;
+}
+
+
+
+
+
+
+
+/* 과실품질조사결과 의뢰서 */
+.survey-results {
+    padding: 70px 25px;
+}
+
+.bullet-info2 {
+    display: flex;
+    justify-content: flex-end;
+    gap: 20px;
+    margin-bottom: 8px;
+}
+.bullet-info2 dl {
+    display: flex;
+    align-items: center;
+}
+.bullet-info2 dl dt,
+.bullet-info2 dl dd {
+    font-weight: 700;
+    font-size: 14px;
+    color: #6F809A;
+}
+.bullet-info2 dl dt {
+    margin-right: 5px
+}
+.bullet-info2 dl dt::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 3px;
+    height: 3px;
+    background: #6F809A;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+
+.integrity-goal {
+    display: flex;
+    align-items: center;
+}
+.integrity-goal dt {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    width: 110px;
+    height: 120px;
+    flex-shrink: 0;
+    font-weight: 700;
+    font-size: 20px;
+    color: #fff;
+    background: #5AB246;
+    border-radius: 20px 0px 20px 20px;
+    margin-right: 20px;
+}
+.integrity-goal dt::after {
+    content: "";
+    display: block;
+    width: 36px;
+    height: 36px;
+    background: url("/images/adm/icon/integrity-goal.svg") no-repeat center;
+    background-size: 36px;
+    margin-top: 5px;
+}
+.integrity-goal dd .tit {
+    font-weight: 700;
+    font-size: 16px;
+    color: #6F809A;
+    margin-bottom: 8px;
+}
+.integrity-goal dd .txt {
+    font-size: 16px;
+    line-height: 22px;
+    color: #8EA2C0;
+}
+
+.bullet-info dl,
+.bullet-info dt {
+    display: flex;
+    align-items: center;
+}
+.bullet-info dt::before {
+    content: "";
+    display: inline-block;
+    vertical-align: middle;
+    width: 14px;
+    height: 14px;
+    border: 1px solid #6F809A;
+    border-radius: 50%;
+    margin-right: 5px;
+}
+.bullet-info dt::after {
+    content: ":";
+    margin: 0 5px;
+}

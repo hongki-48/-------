@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="author" content="넥스트이지">
+	
+	<title>통합돌봄 식사영양관리 운영시스템</title>
+	
+	<!-- css -->
+    <link rel="stylesheet" href="/css/adm/import.css">
+	
+	<!-- script -->
+	<script src="/js/comm/jquery-3.4.1.js"></script>
+    <script src="/js/comm/jquery-ui-1.12.1.js"></script>
+	<script src="/js/comm/view-comm.js"></script>
+    <script src="/js/comm/html-func.js"></script>
+    <script src="/js/comm/html-comm.js"></script>
+</head>
+<body>
+<div id="wrapper">
+
+	<!-- skip navigation -->
+	<div id="skipNav" class="skip-nav">
+		<a href="#skipContent">본문 바로가기</a>
+		<a href="#gnb">주 메뉴 바로가기</a>
+	</div>
+	<!-- //skip navigation -->
+
+	<aside id="aside">
+		<h1 class="logo">
+			<a href="/">통합돌봄<br>식사영양관리<br>운영시스템</a>
+		</h1>
+
+		<div class="login-info">
+			<div class="profile">
+				<span class="img-fit"><img src="/images/adm/sample/user.png" alt=""></span>
+				<span class="name">노인복지과</span>
+				<button class="btn xs second ml-auto"><i class="ico logout"></i> 로그아웃</button>
+			</div>
+		</div>
+
+		<div class="gnb-wrap">
+			<nav id="gnb" class="gnb">
+				<ul>
+					<li>
+						<a href=""><i class="ico1"></i> <strong>기관정보 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico2"></i> <strong>대상자 관리</strong></a>
+					</li>
+					<li class="active">
+						<a href=""><i class="ico3"></i> <strong>식단표 관리</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico4"></i> <strong>진행현황 조회</strong></a>
+					</li>
+					<li>
+						<a href=""><i class="ico5"></i> <strong>사업결과보고조회</strong></a>
+					</li>
+				</ul>
+			</nav>
+		</div>
+	</aside>
+	
+	<main id="main">
+		<section id="skipContent" class="contents-wrap">
+			<h2 class="page-tit">Page Title</h2>
+			
+			<!-- Change Contents (↓↓콘텐츠 변경↓↓) -->
+
+			<div>
+				<section class="card">
+					<div class="tit-justify">
+						<h3 class="group-tit">Group Title</h3>
+						<p class="top-caption">
+							<i class="required"></i>
+							<strong class="txt">표시 필수 입력사항</strong>
+						</p>
+					</div>
+					<table class="row">
+						<colgroup>
+							<col style="width: 20%">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div class="tit required">Title</div></th>
+								<td>
+									<input type="text" class="wp100" placeholder="Input Box">
+								</td>
+							</tr>
+							<tr>
+								<th><div class="tit required">Title</div></th>
+								<td>
+									<input type="text" class="wp100" placeholder="Input Box disabled" disabled>
+								</td>
+							</tr>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<div class="text-box">Text Box</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<div class="text-box-not">Text Box Not</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">Group Title</h3>
+					<table class="row">
+						<colgroup>
+							<col style="width: 20%">
+							<col style="width: 30%">
+							<col style="width: 20%">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<select class="wp100" title="수량선택">
+										<option value="">Width 100%</option>
+									</select>
+								</td>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<select title="수량선택">
+										<option value="">Width Auto</option>
+									</select>
+									<select title="수량선택">
+										<option value="">Width Auto</option>
+									</select>
+								</td>
+							</tr>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<div class="flex gap5">
+										<select class="wp100" title="수량선택">
+											<option value="">Width 100% Auto</option>
+										</select>
+										<select class="wp100" title="수량선택">
+											<option value="">Width 100% Auto</option>
+										</select>
+									</div>
+								</td>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<div class="flex gap5">
+										<input type="text" class="wp100">
+										<input type="text" class="wp100">
+										<input type="text" class="wp100">
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">Group Title</h3>
+					<table class="row">
+						<colgroup>
+							<col style="width: 20%">
+							<col>
+						</colgroup>
+						<tbody>
+							<tr>
+								<th><div class="tit required">Title</div></th>
+								<td>
+									<div class="text-box-not">
+										<div class="flex justify wp100">
+											<span>Text, Text, Text</span>
+											<button class="btn second md">선택</button>
+										</div>
+									</div>
+								</td>
+							</tr>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td>
+									<div class="text-box">
+										<table class="row">
+											<colgroup>
+												<col style="width: 20%">
+												<col>
+											</colgroup>
+											<tbody>
+												<tr>
+													<th>
+														<div class="tit">Title</div>
+													</th>
+													<td>
+														<div class="text-box">
+															<label class="lb-ch">
+																<input type="checkbox" checked>
+																<span class="text">Checkbox 1</span>
+															</label>
+															<label class="lb-ch">
+																<input type="checkbox">
+																<span class="text">Checkbox 1</span>
+															</label>
+														</div>
+													</td>
+												</tr>
+												<tr>
+													<th>
+														<div class="tit">Title</div>
+													</th>
+													<td>
+														<div class="text-box right">
+															<label class="lb-ch">
+																<input type="checkbox" checked>
+																<span class="text">Checkbox 1</span>
+															</label>
+															<label class="lb-ch">
+																<input type="checkbox">
+																<span class="text">Checkbox 1</span>
+															</label>
+														</div>
+													</td>
+												</tr>
+											</tbody>
+										</table>
+									</div>
+								</td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+
+				<section class="card">
+					<h3 class="group-tit">Group Title1</h3>
+					<h3 class="group-tit2">Group Title2</h3>
+					<h3 class="group-tit3">Group Title3</h3>
+					<table class="row">
+						<colgroup>
+							<col style="width: 20%">
+							<col span="4">
+						</colgroup>
+						<thead>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<th><div class="tit">Title</div></th>
+								<th><div class="tit">Title</div></th>
+								<th><div class="tit">Title</div></th>
+								<th><div class="tit">Title</div></th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td><div class="text-box-not center">105</div></td>
+								<td><div class="text-box-not center">35</div></td>
+								<td><div class="text-box-not center">35</div></td>
+								<td><div class="text-box-not center">35</div></td>
+							</tr>
+							<tr>
+								<th><div class="tit">Title</div></th>
+								<td><input type="text" class="wp100"></td>
+								<td><input type="text" class="wp100"></td>
+								<td><input type="text" class="wp100"></td>
+								<td><input type="text" class="wp100"></td>
+							</tr>
+						</tbody>
+					</table>
+				</section>
+			</div>
+
+			<!-- //Change Contents (↑↑콘텐츠 변경↑↑) -->
+
+		</section> <!-- //contents-wrap -->
+	</main>
+
+	<footer id="footer">
+		
+	</footer>
+</div> <!--//wrapper-->
+</body>
+</html>
