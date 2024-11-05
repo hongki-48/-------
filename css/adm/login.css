@@ -1,98 +1,144 @@
 @charset "utf-8";
 
+@import url("/css/comm/font.css");
+@import url("/css/comm/reset.css");
+@import url("/css/adm/reset.css");
 
 
-/* --------------------------------------------------------- header ------------------------------------------------------------------ */
+
+/* Reset */
 body {
-	background-repeat: no-repeat;
-	background-position: center bottom;
+	height: 100vh;
+	background: url("/images/adm/login/bg.jpg") no-repeat center #fff;
+	background-size: cover;
 }
 
-#header h1 {margin-top: 170px; text-align: center;}
-
-#main {min-height: 100vh; min-height: calc(100vh - 370px) !important; margin-top: 55px;}
-/* --------------------------------------------------------- //header ----------------------------------------------------------------- */
 
 
-
-/* --------------------------------------------------------- login -------------------------------------------------------------------- */
-.login-wrap {width: 580px; min-height: 540px; margin: auto;}
-.login-wrap .copy {
-	font-size: 12px; font-weight: 400; color: #161c2f; 
-	margin-top: 40px; text-align: center;
+/* Login */
+.login-wrap {
+	position: absolute;
+	z-index: 9;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -55%);
+	width: 500px;
+	margin: auto;
 }
+
 .login-box {
-	border-radius: 15px; padding: 40px 40px 25px;
-	background-color: rgba(255,255,255,0.80);
-	box-shadow: 0px 5px 15px 5px rgba(0,0,0,0.10); overflow: hidden;
+	background: #fff;
+	box-shadow: 0px 5px 15px 5px rgba(0, 0, 0, 0.10);
+	border-radius: 30px;
+	padding: 50px;
+	overflow: hidden;
 }
-.login-box h2 {text-align: center; font-size: 24px; font-weight: 700; color: #161c2f; margin-bottom: 28px;}
-.login-box h2::before {
-	display: inline-block; vertical-align: top; margin : 0 13px 0 0;
-	content: url("/images/adm/login/title-icon.png");
+
+.login-box .logo {
+	text-align: center;
+	margin-bottom: 5px;
 }
-.login-box .int-box {width: 260px; margin: 0 auto 6px;}
-.login-box .int-box label {display: none;}
+
+.login-box .int-box {
+	margin-top: -1px;
+	position: relative;
+}
+.login-box .int-box label {
+	display: none;
+}
 .login-box .int-box input {
-	width: 100%; height: 40px; font-size: 16px;
-	border-color: #bac0d6;
+	width: 100%;
+	height: 60px;
+	font-size: 16px;
+	background: #fff;
+	border: 1px solid #ddd;
+	border-radius: 10px;
+	padding: 0 15px 0 55px;
+	box-sizing: border-box;
+}
+.login-box .int-box input:-webkit-autofill {
+	-webkit-box-shadow: 0 0 0 1000px white inset;
+	box-shadow: 0 0 0 1000px white inset;
 }
 
-/* Input Placeholder */
-.login-box .int-box ::placeholder {color: #bac0d6 !important; background-repeat: no-repeat; background-position: left center; padding-left: 28px;}
-.login-box .int-box ::-webkit-input-placeholder {color: #bac0d6 !important; background-repeat: no-repeat; background-position: left center; padding-left: 28px;}
-.login-box .int-box ::-moz-placeholder {color: #bac0d6 !important;} /* Firefox 19+ */
-.login-box .int-box :-ms-input-placeholder {color: #bac0d6 !important; background-repeat: no-repeat; background-position: left 10px center; padding-left: 38px;} /* IE */
-.login-box .int-box :-moz-placeholder {color: #bac0d6 !important; background-repeat: no-repeat; background-position: left center; padding-left: 28px;} /* Firefox 18- */
-
-.login-box .int-box #userID::placeholder {background-image: url("/images/adm/login/id-icon.png");}
-.login-box .int-box #userID::-webkit-input-placeholder {background-image: url("/images/adm/login/id-icon.png");}
-.login-box .int-box #userID::-moz-placeholder {} /* Firefox 19+ */
-.login-box .int-box #userID:-ms-input-placeholder {background-image: url("/images/adm/login/id-icon.png");} /* IE */
-.login-box .int-box #userID:-moz-placeholder {background-image: url("/images/adm/login/id-icon.png");} /* Firefox 18- */
-
-.login-box .int-box #userPW::placeholder {background-image: url("/images/adm/login/password-icon.png");}
-.login-box .int-box #userPW::-webkit-input-placeholder {background-image: url("/images/adm/login/password-icon.png");}
-.login-box .int-box #userPW::-moz-placeholder {} /* Firefox 19+ */
-.login-box .int-box #userPW:-ms-input-placeholder {background-image: url("/images/adm/login/password-icon.png");} /* IE */
-.login-box .int-box #userPW:-moz-placeholder {background-image: url("/images/adm/login/password-icon.png");} /* Firefox 18- */
-/* //Input Placeholder */
-
-.help-text {margin-top: 45px;}
-.help-text dt, 
-.help-text dd {font-size: 16px; color: #626984;}
-.help-text dt {font-weight: 700; margin-bottom: 10px;}
-.help-text dd {line-height: 1.7rem;}
-.help-text dd ul li {position: relative; padding-left: 16px;}
-.help-text dd ul li::before {
-	content: "*";
-	position: absolute; top: 3px; left: 0;
-	font-size: 24px;
+.login-box .int-box input#mngrUid {
+	border-bottom-left-radius: 0;
+	border-bottom-right-radius: 0;
+}
+.login-box .int-box input#pswd {
+	border-top-left-radius: 0;
+	border-top-right-radius: 0;
+}
+.login-box .int-box::before {
+	content: "";
+	display: block;
+	position: absolute;
+	z-index: 3;
+	left: 20px;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 20px;
+	height: 20px;
+	background: url("/images/adm/login/user.png") no-repeat center;
+}
+.login-box .int-box + .int-box::before {
+	background-image: url("/images/adm/login/pw.png");
 }
 
-.login-box .int-check {margin-top: 5px;}
-.login-box .int-check label {font-size: 12px; color: #5f5f60;}
-.login-box .login-btn {text-align: center;}
+.login-box .login-btn {
+	text-align: center;
+	margin-top: 30px;
+}
 .login-box .login-btn a,
 .login-box .login-btn button {
-	display: inline-block;
-	border: none; background-color: #161c2f; 
-	font-size: 16px; font-weight: 500; color: #fff; 
-	width: 260px; line-height: 45px; margin-top: 10px; padding-right: 8px; border-radius: 3px;
 	text-align: center;
+	width: 100%;
+	height: 60px;
+	font-weight: 600;
+	font-size: 18px;
+	color: #fff;
+	background: var(--primary-color);
+	border: none;
+	border-radius: 10px;
+	padding-right: 8px;
 }
-.login-box .login-btn a::before,
-.login-box .login-btn button::before {
-	display: inline-block; vertical-align: top; margin-right: 5px;
-	content: url("/images/adm/login/btn-icon.png");
+
+.login-box .copy {
+	text-align: center;
+	font-size: 13px;
+	color: #777;
+	margin-top: 25px;
 }
-/* --------------------------------------------------------- //login ------------------------------------------------------------------- */
+
+.info-txt {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 5px;
+	font-size: 14px;
+	line-height: 15px;
+	color: var(--light-color);
+	margin-bottom: 12px;
+}
+.info-txt::before {
+	content: url("/images/adm/login/info.png");
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+}
+.info-txt strong {
+	font-weight: 600;
+}
 
 
-
-/* --------------------------------------------------------- footer -------------------------------------------------------------------- */
-#footer {text-align: center; margin-bottom: 20px;}
-#footer p {font-size: 12px;}
-/* --------------------------------------------------------- //footer ------------------------------------------------------------------ */
-
-
+.login-tit {
+	text-align: center;
+	font-size: 26px;
+	color: #000;
+	margin-bottom: 30px;
+}
+.login-tit.sm {
+	font-weight: 500;
+	font-size: 16px;
+	margin-bottom: 20px;
+}

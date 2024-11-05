@@ -1110,17 +1110,18 @@ span.btn {cursor: auto;}
     transform: translateY(-50%);
     padding-right: inherit;
 }
-.modal .main .close {
+.modal .main button.close {
     right: 12px;
     top: 12px;
     padding: 0;
 }
-.modal .main .close::after {
+.modal .main button.close::after {
     color: var(--light-color);
 }
 
-.modal .close {
-    position: absolute; z-index: 2;
+.modal button.close {
+    position: absolute;
+    z-index: 2;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -1128,7 +1129,7 @@ span.btn {cursor: auto;}
     height: 35px;
     transition: all .7s ease;
 }
-.modal .close::after {
+.modal button.close::after {
     font-family: 'Material Icons Outlined';
     font-feature-settings: 'liga';
     content: "close";
@@ -1136,8 +1137,8 @@ span.btn {cursor: auto;}
     font-size: 22px;
     color: #fff;
 }
-.modal .close span,
-.modal .close strong {
+.modal button.close span,
+.modal button.close strong {
     display: none;
 }
 

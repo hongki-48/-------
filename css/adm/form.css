@@ -435,7 +435,7 @@ label.st1 .txt {font-size: 14px; line-height: 21px; cursor: pointer;}
     vertical-align: middle;
     margin-right: 20px;
     position: relative;
-    top: 2px;
+    /* top: 2px; */
 }
 .lb-ch:last-child {margin-right: 0;}
 .lb-ch.center {
